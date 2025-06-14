@@ -1,0 +1,3313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Black_D_Logo.png" type="image/x-icon">
+    <title>Jumeirah Beach Hotel - Dubai - Destinology</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Poppins for Body Text -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- IMPORTANT: This code uses the font 'The Seasons'. You will need to load this font into your project (e.g., using @font-face) for it to display correctly. -->
+
+    <style>
+        :root {
+            /* Destinology Brand Colors - EXACT from guidelines */
+            --black: #1F1F1F;
+            --marine: #153B3C;
+            --wine: #562D33;
+            --terracotta: #925D56;
+            --sand: #C9A582;
+            --almond: #E6D7CB;
+            --white: #FFFFFF;
+
+            /* Interactive Hover States (.75 versions) */
+            --marine-75: #20595B;
+            --wine-75: #783F48;
+            --terracotta-75: #AC7872;
+            --sand-75: #DAC2A9;
+            --almond-75: #F8F4F1;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+        html{
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.5;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* --- CHANGE 1: APPLY 'THE SEASONS' FONT TO ALL HEADINGS --- */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        .headline-font,
+        .text-h1,
+        .text-h2,
+        .text-h3,
+        #mainPrice {
+            font-family: 'The Seasons', serif;
+            font-weight: 700;
+        }
+
+        .body-font {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Text sizing per guidelines */
+        .text-h1 {
+            font-size: 56px;
+            line-height: 68px;
+        }
+
+        .text-h2 {
+            font-size: 32px;
+            line-height: 44px;
+        }
+
+        .text-h3 {
+            font-size: 28px;
+            line-height: 40px;
+        }
+
+        .text-body {
+            font-size: 16px;
+            line-height: 24px;
+        }
+
+        .text-small {
+            font-size: 14px;
+            line-height: 22px;
+        }
+
+        .text-xsmall {
+            font-size: 12px;
+            line-height: 20px;
+        }
+
+        /* Brand color classes */
+        .bg-marine {
+            background-color: var(--marine);
+        }
+
+        .bg-wine {
+            background-color: var(--wine);
+        }
+
+        .bg-terracotta {
+            background-color: var(--terracotta);
+        }
+
+        .bg-sand {
+            background-color: var(--sand);
+        }
+
+        .bg-almond {
+            background-color: var(--almond);
+        }
+
+        .bg-almond-75 {
+            background-color: var(--almond-75);
+        }
+
+        .text-marine {
+            color: var(--marine);
+        }
+
+        .text-black {
+            color: var(--black);
+        }
+
+        .text-sand {
+            color: var(--sand);
+        }
+
+        .text-wine {
+            color: var(--wine);
+        }
+
+        .border-marine {
+            border-color: var(--marine);
+        }
+
+        /* Animations - GSAP-like CSS animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes pulseGlow {
+
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(21, 59, 60, 0.4);
+            }
+
+            50% {
+                box-shadow: 0 0 0 10px rgba(21, 59, 60, 0);
+            }
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+        }
+
+        .animate-fade-in-left {
+            animation: fadeInLeft 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+        }
+
+        .animate-fade-in-right {
+            animation: fadeInRight 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+        }
+
+        .animate-slide-in-down {
+            animation: slideInDown 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+        }
+
+        .animate-scale-in {
+            animation: scaleIn 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+        }
+
+        .animate-delay-1 {
+            animation-delay: 0.1s;
+            opacity: 0;
+        }
+
+        .animate-delay-2 {
+            animation-delay: 0.2s;
+            opacity: 0;
+        }
+
+        .animate-delay-3 {
+            animation-delay: 0.3s;
+            opacity: 0;
+        }
+
+        .animate-delay-4 {
+            animation-delay: 0.4s;
+            opacity: 0;
+        }
+
+        .animate-delay-5 {
+            animation-delay: 0.5s;
+            opacity: 0;
+        }
+
+        .top-bar {
+            background-color: var(--almond);
+            color: var(--black);
+            font-size: 14px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .btn-primary {
+            background-color: var(--marine);
+            color: var(--white);
+            padding: 12px 24px;
+            border-radius: 32px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--marine-75);
+            transform: translateY(-1px);
+        }
+
+        .btn-plan-holiday {
+            background-color: var(--marine);
+            color: var(--white);
+            padding: 20px 30px;
+            border-radius: 2px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+        }
+
+        .btn-plan-holiday:hover {
+            background-color: var(--marine-75);
+            transform: translateY(-1px);
+        }
+
+        .nav-link {
+            color: var(--black);
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 16px;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--terracotta);
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        header {
+            position: relative;
+            z-index: 100;
+        }
+
+        .nav-dropdown {
+            position: absolute;
+            top: calc(100% + 20px);
+            left: 50%;
+            background: rgba(255, 255, 255, 0.97);
+            box-shadow: 0 8px 24px rgba(31, 31, 31, 0.15);
+            border-radius: 8px;
+            padding: 40px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateX(-50%) translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            border: 1px solid var(--almond);
+        }
+
+        .nav-dropdown.destinations {
+            min-width: 1200px;
+            max-width: 1400px;
+            width: 90vw;
+        }
+
+        .nav-dropdown.holiday-types {
+            min-width: 280px;
+            max-width: 300px;
+        }
+
+        .nav-dropdown.inspiration {
+            min-width: 220px;
+            max-width: 250px;
+        }
+
+        .nav-item:hover .nav-dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .dropdown-grid {
+            display: grid;
+            gap: 25px;
+        }
+
+        .dropdown-grid.destinations {
+            grid-template-columns: repeat(9, 1fr);
+        }
+
+        .dropdown-grid.holiday-types {
+            grid-template-columns: 1fr;
+        }
+
+        .dropdown-grid.inspiration {
+            grid-template-columns: 1fr;
+        }
+
+        .dropdown-column h4 {
+            color: var(--terracotta);
+            font-size: 15px;
+            font-weight: 600;
+            margin: 0 0 15px 0;
+            text-transform: none;
+            letter-spacing: 0;
+        }
+
+        .dropdown-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .dropdown-links li {
+            margin-bottom: 6px;
+        }
+
+        .dropdown-links a {
+            color: var(--black);
+            text-decoration: none;
+            font-size: 13px;
+            line-height: 1.4;
+            transition: color 0.3s ease;
+            font-weight: 400;
+        }
+
+        .dropdown-links a:hover {
+            color: var(--terracotta);
+        }
+
+        /* Card styling */
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            border: 1px solid #e5e7eb;
+            height: fit-content;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Heart animation - Instagram-like */
+        .heart-button {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 44px;
+            height: 44px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border: none;
+            backdrop-filter: blur(10px);
+        }
+
+        .heart-button:hover {
+            background: var(--white);
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .heart-icon {
+            font-size: 20px;
+            color: #666;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .heart-button.liked .heart-icon {
+            color: var(--wine);
+            animation: heartBurst 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        @keyframes heartBurst {
+            0% {
+                transform: scale(1);
+            }
+
+            15% {
+                transform: scale(1.3);
+            }
+
+            30% {
+                transform: scale(0.9);
+            }
+
+            45% {
+                transform: scale(1.15);
+            }
+
+            60% {
+                transform: scale(0.95);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .tripadvisor-rating {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            margin-top: 6px;
+        }
+
+        .tripadvisor-logo {
+            width: 16px;
+            height: 16px;
+            background: #00AA6C;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2px;
+            box-sizing: border-box;
+        }
+
+        .tripadvisor-logo img {
+            width: 10px;
+            height: 10px;
+            filter: brightness(0) invert(1);
+        }
+
+        .tripadvisor-score {
+            font-weight: 600;
+            color: var(--marine);
+        }
+
+        .tripadvisor-reviews {
+            color: var(--terracotta);
+            font-size: 11px;
+        }
+
+        /* Elegant Offer Banner */
+        .offer-card {
+            position: relative;
+            overflow: hidden;
+            padding-top: 60px;
+            /* Make space for the banner */
+            border: 2px solid var(--marine);
+        }
+
+        .offer-banner {
+            position: absolute;
+            top: 18px;
+            left: -8px;
+            display: flex;
+            align-items: center;
+            height: 38px;
+            background-color: var(--marine);
+            color: white;
+            padding-left: 18px;
+            padding-right: 18px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 14px;
+            box-shadow: 0 4px 12px rgba(21, 59, 60, 0.4);
+            z-index: 10;
+        }
+
+        .offer-banner::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 8px 8px 0;
+            border-color: transparent #0d2c2d transparent transparent;
+        }
+
+        .best-offer-tag {
+            background-color: var(--sand);
+            color: var(--marine);
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 16px;
+            margin-left: 12px;
+        }
+
+        /* Enhanced Calendar styling with animations */
+        .calendar-container {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .calendar-day {
+            width: 52px;
+            height: 64px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            border: 2px solid #e5e7eb;
+            margin: 2px;
+            background: white;
+        }
+
+        .calendar-day:hover:not(.unavailable):not(.outside-month) {
+            border-color: var(--marine);
+            background-color: var(--almond-75);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(21, 59, 60, 0.15);
+        }
+
+        .calendar-day.selected {
+            background: linear-gradient(135deg, var(--marine), var(--marine-75)) !important;
+            color: var(--white) !important;
+            border-color: var(--marine) !important;
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(21, 59, 60, 0.3);
+            animation: pulseGlow 2s infinite;
+        }
+
+        .calendar-day.cheapest {
+            position: relative;
+            overflow: visible;
+        }
+
+        .calendar-day.cheapest::after {
+            content: '💎';
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            font-size: 16px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-10px);
+            }
+
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        .calendar-day.unavailable {
+            opacity: 0.3;
+            cursor: not-allowed;
+            background: #f3f4f6;
+        }
+
+        .calendar-day.outside-month {
+            color: #ccc;
+            cursor: default;
+        }
+
+        .calendar-price {
+            font-size: 11px;
+            font-weight: 500;
+            margin-top: 2px;
+            opacity: 0.8;
+        }
+
+        .calendar-header {
+            width: 52px;
+            text-align: center;
+            padding: 12px 0;
+            font-weight: 600;
+            color: var(--marine);
+            font-size: 14px;
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 52px);
+            gap: 4px;
+            justify-content: center;
+        }
+
+        /* Alternative flights section */
+        .alt-flights-container {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            border: 1px solid #e5e7eb;
+            margin-top: 24px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .flights-layout {
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 24px;
+        }
+
+        /* Duration tabs */
+        .duration-tabs {
+            display: flex;
+            margin-bottom: 24px;
+            border-bottom: 2px solid #e5e7eb;
+            overflow-x: auto;
+            gap: 4px;
+        }
+
+        .duration-tab {
+            padding: 12px 16px;
+            cursor: pointer;
+            font-size: 12px;
+            text-align: center;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            min-width: 90px;
+            white-space: nowrap;
+            border-radius: 8px 8px 0 0;
+            background: #f9fafb;
+            margin-bottom: -2px;
+        }
+
+        .duration-tab.active {
+            border-bottom-color: var(--marine);
+            color: var(--marine);
+            font-weight: 600;
+            background: white;
+            transform: translateY(-2px);
+        }
+
+        .duration-tab:hover:not(.active) {
+            background-color: var(--almond-75);
+            transform: translateY(-1px);
+        }
+
+        /* Filter sections */
+        .filter-section {
+            margin-bottom: 16px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            overflow: hidden;
+            background: white;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .filter-section:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .filter-header {
+            background: linear-gradient(135deg, #f9fafb, #f3f4f6);
+            padding: 14px 16px;
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--marine);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #e5e7eb;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .filter-header:hover {
+            background: linear-gradient(135deg, var(--almond-75), var(--almond));
+        }
+
+        .filter-content {
+            padding: 16px;
+        }
+
+        .filter-option {
+            display: flex;
+            align-items: center;
+            padding: 8px 0;
+            font-size: 13px;
+        }
+
+        .filter-option input:not(.airline-checkbox) {
+            margin-right: 12px;
+            accent-color: var(--marine);
+            transform: scale(1.2);
+        }
+
+        .filter-option label {
+            flex: 1;
+            color: #374151;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .filter-price {
+            font-size: 12px;
+            color: var(--marine);
+            margin-left: auto;
+            font-weight: 600;
+            background: var(--almond-75);
+            padding: 2px 8px;
+            border-radius: 12px;
+        }
+
+        /* NEW Airline Filter Styles */
+        .airline-logo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+            gap: 12px;
+        }
+
+        .airline-logo-label {
+            cursor: pointer;
+            display: block;
+        }
+
+        .airline-filter-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 48px;
+            padding: 6px;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            transition: all 0.2s ease-in-out;
+            background-color: white;
+        }
+
+        .airline-logo-label:hover .airline-filter-logo {
+            border-color: var(--sand);
+            transform: scale(1.05);
+        }
+
+        .airline-checkbox:checked+.airline-filter-logo {
+            border-color: var(--marine);
+            box-shadow: 0 0 0 2px var(--marine);
+            transform: scale(1.05);
+        }
+
+        .airline-filter-logo img {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+        }
+
+
+        /* Flight cards */
+        .flight-results {}
+
+        .flight-card {
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 16px;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            font-size: 14px;
+            background: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .flight-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(21, 59, 60, 0.05), transparent);
+            transition: left 0.6s;
+        }
+
+        .flight-card:hover::before {
+            left: 100%;
+        }
+
+        .flight-card:hover {
+            border-color: var(--marine);
+            box-shadow: 0 12px 40px rgba(21, 59, 60, 0.15);
+            transform: translateY(-4px);
+        }
+
+        .flight-leg {
+            padding-bottom: 16px;
+        }
+
+        .flight-leg:not(:last-child) {
+            margin-bottom: 16px;
+        }
+
+        .flight-path-container {
+            flex-grow: 1;
+            margin: 0 16px;
+            position: relative;
+            height: 20px;
+        }
+
+        .flight-path-line {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: var(--almond);
+            border-radius: 1px;
+        }
+
+        .flight-path-icon {
+            position: absolute;
+            top: 50%;
+            left: 15%;
+            /* Start position */
+            transform: translate(-50%, -50%);
+            color: var(--marine);
+            font-size: 16px;
+            background-color: white;
+            padding: 0 4px;
+            transition: left 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .flight-card:hover .flight-path-icon {
+            left: 85%;
+            /* End position */
+        }
+
+        .airline-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .airline-logo img {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+        }
+
+        .airline-logo:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        /* --- CHANGE 2: DIAMOND STYLING APPLIED TO STAR-RATING --- */
+        .star-rating {
+            color: var(--sand);
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 2px;
+        }
+
+        .star-rating .fas {
+            transition: all 0.2s ease;
+        }
+
+        .star-rating:hover .fas {
+            transform: scale(1.2);
+            color: #FFD700;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            background: white;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--marine);
+            box-shadow: 0 0 0 4px rgba(21, 59, 60, 0.1);
+            transform: translateY(-1px);
+        }
+
+        .range-slider {
+            width: 100%;
+            height: 6px;
+            border-radius: 3px;
+            background: linear-gradient(to right, var(--almond), var(--sand));
+            outline: none;
+            -webkit-appearance: none;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .range-slider:hover {
+            transform: scaleY(1.5);
+        }
+
+        .range-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--marine);
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(21, 59, 60, 0.3);
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .range-slider::-webkit-slider-thumb:hover {
+            transform: scale(1.3);
+            box-shadow: 0 6px 12px rgba(21, 59, 60, 0.4);
+        }
+
+        .range-slider::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--marine);
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 4px 8px rgba(21, 59, 60, 0.3);
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            margin-top: 24px;
+        }
+
+        .pagination-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid #e5e7eb;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .pagination-btn:hover {
+            background: var(--marine);
+            color: white;
+            border-color: var(--marine);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(21, 59, 60, 0.3);
+        }
+
+        .pagination-btn.active {
+            background: var(--marine);
+            color: white;
+            border-color: var(--marine);
+        }
+
+        .cheapest-badge {
+            background: linear-gradient(135deg, var(--sand), var(--terracotta));
+            color: var(--white);
+            padding: 6px 12px;
+            border-radius: 16px;
+            font-size: 11px;
+            font-weight: 600;
+            box-shadow: 0 4px 8px rgba(201, 165, 130, 0.3);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .toggle-switch {
+            position: relative;
+            width: 60px;
+            height: 32px;
+            background: linear-gradient(135deg, #ccc, #e5e7eb);
+            border-radius: 16px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .toggle-switch.active {
+            background: linear-gradient(135deg, var(--marine), var(--marine-75));
+            box-shadow: 0 4px 8px rgba(21, 59, 60, 0.3);
+        }
+
+        .toggle-slider {
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            width: 26px;
+            height: 26px;
+            background: white;
+            border-radius: 50%;
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .toggle-switch.active .toggle-slider {
+            transform: translateX(28px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .flight-time {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--marine);
+        }
+
+        .flight-airport {
+            font-size: 13px;
+            color: #6b7280;
+        }
+
+        .flight-duration {
+            font-size: 11px;
+            color: #6b7280;
+            background: var(--almond-75);
+            padding: 2px 8px;
+            border-radius: 8px;
+            display: inline-block;
+            font-weight: 500;
+        }
+
+        .price-display {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .price-display.updating {
+            animation: priceUpdate 0.5s ease-in-out;
+        }
+
+        @keyframes priceUpdate {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+                background-color: var(--almond-75);
+            }
+        }
+
+        .loading {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .loading::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            animation: loading 1.5s infinite;
+        }
+
+        @keyframes loading {
+            0% {
+                left: -100%;
+            }
+
+            100% {
+                left: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Full Screen Image Modal HTML - Add this to your existing HTML -->
+    <div id="imageModal" class="image-modal">
+        <span class="close-btn" id="closeImageModal">✕</span>
+        <div class="modal-content-wrapper">
+            <img id="modalImage" class="modal-img" src="" alt="">
+            <div class="image-nav">
+                <button id="prevBtn" class="nav-btn prev-btn">&#10094;</button>
+                <button id="nextBtn" class="nav-btn next-btn">&#10095;</button>
+            </div>
+            <div class="image-counter">
+                <span id="imageCounter">1 / 6</span>
+            </div>
+        </div>
+    </div>
+    
+    <style>
+        /* Full Screen Image Modal Styles */
+        .image-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            animation: fadeIn 0.3s ease;
+        }
+    
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 24px;
+            font-weight: 300;
+            cursor: pointer;
+            z-index: 10001;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            user-select: none;
+            backdrop-filter: blur(10px);
+        }
+    
+        .close-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.6);
+            transform: rotate(90deg) scale(1.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+    
+        .modal-content-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    
+        .modal-img {
+            max-width: 95%;
+            max-height: 95%;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+    
+        .image-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+            pointer-events: none;
+        }
+    
+        .nav-btn {
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            font-size: 24px;
+            padding: 15px 20px;
+            cursor: pointer;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            pointer-events: all;
+            user-select: none;
+        }
+    
+        .nav-btn:hover {
+            background: rgba(0, 0, 0, 0.8);
+            transform: scale(1.1);
+        }
+    
+        .image-counter {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 16px;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 8px 16px;
+            border-radius: 20px;
+            user-select: none;
+        }
+    
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+    
+            to {
+                opacity: 1;
+            }
+        }
+    
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .close-btn {
+                top: 10px;
+                right: 15px;
+                font-size: 30px;
+            }
+    
+            .nav-btn {
+                font-size: 20px;
+                padding: 10px 15px;
+            }
+    
+            .image-counter {
+                bottom: 20px;
+                font-size: 14px;
+            }
+        }
+    </style>
+    
+    <script>
+        // JavaScript for Full Screen Image Modal
+        document.addEventListener('DOMContentLoaded', function () {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            const closeBtn = document.getElementById('closeImageModal');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const counter = document.getElementById('imageCounter');
+
+            // Array of images - replace with your actual image URLs
+            const images = [
+                'jumeirah.jpg',
+                'taj.jpg',
+                'waldorf.jpeg'
+            ];
+
+            let currentImageIndex = 0;
+
+            // Find the "View Photos" button
+            const viewPhotosBtn = document.getElementById('viewPhotosBtn');
+
+            // Open modal when "View Photos" is clicked
+            if (viewPhotosBtn) {
+                viewPhotosBtn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    openModal(0); // Start with first image
+                });
+            }
+
+            function openModal(imageIndex) {
+                currentImageIndex = imageIndex;
+                modalImg.src = images[currentImageIndex];
+                updateCounter();
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            }
+
+            function updateCounter() {
+                counter.textContent = `${currentImageIndex + 1} / ${images.length}`;
+            }
+
+            // Close modal
+            function closeModal() {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+
+            // Event listeners
+            closeBtn.addEventListener('click', closeModal);
+
+            // Navigate images
+            prevBtn.addEventListener('click', function () {
+                currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+                modalImg.src = images[currentImageIndex];
+                updateCounter();
+            });
+
+            nextBtn.addEventListener('click', function () {
+                currentImageIndex = (currentImageIndex + 1) % images.length;
+                modalImg.src = images[currentImageIndex];
+                updateCounter();
+            });
+
+            // Close modal when clicking outside image or on empty space
+            modal.addEventListener('click', function (e) {
+                if (e.target === modal || e.target === document.querySelector('.modal-content-wrapper')) {
+                    closeModal();
+                }
+            });
+
+            // Keyboard navigation
+            document.addEventListener('keydown', function (e) {
+                if (modal.style.display === 'block') {
+                    switch (e.key) {
+                        case 'Escape':
+                            closeModal();
+                            break;
+                        case 'ArrowLeft':
+                            prevBtn.click();
+                            break;
+                        case 'ArrowRight':
+                            nextBtn.click();
+                            break;
+                    }
+                }
+            });
+        });
+    </script>
+
+    <!-- Top Bar -->
+    <div class="top-bar" style="padding-bottom: 10px;">
+        <div class="px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-12" style="width: 1485px;">
+                <div class="flex items-center space-x-8">
+                    <div class="flex items-center" style="margin-top: 10px;"><i
+                            class="fas fa-phone mr-2 text-sm"></i><span class="text-sm font-medium">01204 269010</span>
+                    </div>
+                    <div class="flex items-center" style="margin-top: 10px;"><i
+                            class="fas fa-clock mr-2 text-sm"></i><span class="text-sm font-medium">Open until
+                            19:00</span></div>
+                </div>
+                <div><a href="#" class="btn-plan-holiday"
+                        style="margin-top: 10px; width: 360px; margin-left: 90px; padding-left: 60px; font-weight: 600;">Plan
+                        Your Next Holiday <i class="fas fa-arrow-right ml-2"></i></a></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm animate-on-view" style="height: 100px;">
+        <div class="px-4 sm:px-6 lg:px-8" style="padding-top: 10px;">
+            <div class="flex justify-between items-center h-20">
+                <nav class="flex items-center space-x-8">
+                    <div class="nav-item">
+                        <a href="#" class="nav-link">Destinations</a>
+                        <div class="nav-dropdown destinations" style="margin-left: 610px; margin-top: 18px;">
+                            <div class="dropdown-grid destinations">
+                                <div class="dropdown-column">
+                                    <h4>Indian Ocean</h4>
+                                    <ul class="dropdown-links">
+                                        <li><a href="#">Maldives</a></li>
+                                        <li><a href="#">Mauritius</a></li>
+                                        <li><a href="#">Seychelles</a></li>
+                                        <li><a href="#">Sri Lanka</a></li>
+                                        <li><a href="#">India</a></li>
+                                    </ul>
+                                </div>
+                                <div class="dropdown-column">
+                                    <h4>Middle East</h4>
+                                    <ul class="dropdown-links">
+                                        <li><a href="#">Dubai</a></li>
+                                        <li><a href="#">Abu Dhabi</a></li>
+                                        <li><a href="#">Oman</a></li>
+                                        <li><a href="#">Fujairah</a></li>
+                                        <li><a href="#">Ras al Khaimah</a></li>
+                                        <li><a href="#">Zighy Bay</a></li>
+                                        <li><a href="#">Qatar</a></li>
+                                        <li><a href="#">Saudi Arabia</a></li>
+                                        <li><a href="#">AlUla</a></li>
+                                    </ul>
+                                </div>
+                                <div class="dropdown-column">
+                                    <h4>Europe</h4>
+                                    <ul class="dropdown-links">
+                                        <li><a href="#">Greece</a></li>
+                                        <li><a href="#">Spain</a></li>
+                                        <li><a href="#">Cyprus</a></li>
+                                        <li><a href="#">Portugal</a></li>
+                                        <li><a href="#">Turkey</a></li>
+                                        <li><a href="#">Croatia</a></li>
+                                        <li><a href="#">Italy</a></li>
+                                        <li><a href="#">Lapland</a></li>
+                                        <li><a href="#">Switzerland</a></li>
+                                        <li><a href="#">Malta</a></li>
+                                        <li><a href="#">Montenegro</a></li>
+                                        <li><a href="#">Iceland</a></li>
+                                        <li><a href="#">France</a></li>
+                                    </ul>
+                                </div>
+                                <div class="dropdown-column">
+                                    <h4>Caribbean & Mexico</h4>
+                                    <ul class="dropdown-links">
+                                        <li><a href="#">Barbados</a></li>
+                                        <li><a href="#">Saint Lucia</a></li>
+                                        <li><a href="#">Antigua And Barbuda</a></li>
+                                        <li><a href="#">Aruba Dutch Antilles</a></li>
+                                        <li><a href="#">Grenada</a></li>
+                                        <li><a href="#">Jamaica</a></li>
+                                        <li><a href="#">St Barths</a></li>
+                                        <li><a href="#">Dominican Republic</a></li>
+                                        <li><a href="#">St Vincent and the Grenadines</a></li>
+                                        <li><a href="#">Anguilla</a></li>
+                                    </ul>
+                                </div>
+                                <div class="dropdown-column">
+                                    <h4>Far East</h4>
+                                    <ul class="dropdown-links">
+                                        <li><a href="#">Thailand</a></li>
+                                        <li><a href="#">Indonesia</a></li>
+                                        <li><a href="#">Vietnam</a></li>
+                                        <li><a href="#">Malaysia</a></li>
+                                        <li><a href="#">Cambodia</a></li>
+                                        <li><a href="#">Singapore</a></li>
+                                        <li><a href="#">Japan</a></li>
+                                        <li><a href="#">Philippines</a></li>
+                                        <li><a href="#">Hong Kong</a></li>
+                                    </ul>
+                                </div>
+                                <div class="dropdown-column">
+                                    <h4>North America</h4>
+                                    <ul class="dropdown-links">
+                                        <li><a href="#">USA</a></li>
+                                        <li><a href="#">Canada</a></li>
+                                    </ul>
+                                </div>
+                                <div class="dropdown-column">
+                                    <h4>Africa</h4>
+                                    <ul class="dropdown-links">
+                                        <li><a href="#">South Africa</a></li>
+                                        <li><a href="#">Kenya</a></li>
+                                        <li><a href="#">Tanzania and Zanzibar</a></li>
+                                        <li><a href="#">Morocco</a></li>
+                                        <li><a href="#">Botswana</a></li>
+                                        <li><a href="#">Zimbabwe</a></li>
+                                        <li><a href="#">Rwanda</a></li>
+                                    </ul>
+                                </div>
+                                <div class="dropdown-column">
+                                    <h4>Australasia</h4>
+                                    <ul class="dropdown-links">
+                                        <li><a href="#">Australia</a></li>
+                                        <li><a href="#">New Zealand</a></li>
+                                    </ul>
+                                </div>
+                                <div class="dropdown-column">
+                                    <h4>Cruise</h4>
+                                    <ul class="dropdown-links">
+                                        <li><a href="#">All Destinations</a></li>
+                                        <li><a href="#">Mediterranean</a></li>
+                                        <li><a href="#">Caribbean</a></li>
+                                        <li><a href="#">Northern Europe</a></li>
+                                        <li><a href="#">Asia & Far East</a></li>
+                                        <li><a href="#">South America</a></li>
+                                        <li><a href="#">Alaska</a></li>
+                                        <li><a href="#">North America</a></li>
+                                        <li><a href="#">Middle East & Indian Ocean</a></li>
+                                        <li><a href="#">Australasia & South Pacific</a></li>
+                                        <li><a href="#">Antarctica</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nav-item" style="margin-left: 80px;">
+                        <a href="#" class="nav-link">Holiday Types</a>
+                        <div class="nav-dropdown holiday-types" style="padding-top: 0px;margin-top: 18px;">
+                            <div class="dropdown-grid holiday-types" style="margin-top: 20px;">
+                                <div class="dropdown-column">
+                                    <ul class="dropdown-links">
+                                        <li><a href="#">All Inclusive Holidays</a></li>
+                                        <li><a href="#">Family Holidays</a></li>
+                                        <li><a href="#">Multi-Centre Holidays</a></li>
+                                        <li><a href="#">Exclusive Benefits</a></li>
+                                        <li><a href="#">Last Minute Deals</a></li>
+                                        <li><a href="#">Free Child Place Holidays</a></li>
+                                        <li><a href="#">School Holiday Travel Deals</a></li>
+                                        <li><a href="#">Summer Holidays</a></li>
+                                        <li><a href="#">Adult Only Holidays</a></li>
+                                        <li><a href="#">Business & First Class Flights</a></li>
+                                        <li><a href="#">Luxury Winter Sun Holidays</a></li>
+                                        <li><a href="#">Luxury 2025 Holidays</a></li>
+                                        <li><a href="#">Hotels With Private Pools</a></li>
+                                        <li><a href="#">Villa Holidays</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="nav-link" style="margin-left: 80px;">Offers</a>
+                </nav>
+                <div class="flex-shrink-0"><img src="Destinology_Black_Logo.png" alt="Destinology Logo" class="h-12"
+                        style="margin-right: 50px; margin-left: 80px;"></div>
+                <nav class="flex items-center space-x-8">
+                    <a href="#" class="nav-link" style="margin-right: 80px;">Luxury Cruise</a>
+                    <a href="#" class="nav-link" style="margin-left: 0px; margin-right: 40px;">Tailor-Made Holidays</a>
+                    <div class="nav-item">
+                        <a href="#" class="nav-link">Inspiration</a>
+                        <div class="nav-dropdown inspiration"
+                            style="right: 0; left: auto; transform: translateX(50%);margin-right: 70px;margin-top: 18px;padding-top: 20px;padding-bottom: 20px;">
+                            <div class="dropdown-grid inspiration">
+                                <div class="dropdown-column">
+                                    <ul class="dropdown-links">
+                                        <li><a href="#"><center>Blog</center></a></li>
+                                        <li><a href="#"><center>Friends of Destinology</center></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 animate-fade-in-up animate-delay-2">
+        <nav class="text-sm body-font">
+            <ol class="flex space-x-2 text-gray-600">
+                <li><a href="#" class="text-marine hover:underline">Home</a></li>
+                <li><span>/</span></li>
+                <li><a href="#" class="text-marine hover:underline">Dubai</a></li>
+                <li><span>/</span></li>
+                <li>Jumeirah Beach Hotel</li>
+            </ol>
+        </nav>
+    </div>
+
+    <!-- Tabs -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 animate-fade-in-up animate-delay-3">
+        <div class="flex border-b border-gray-200">
+            <div class="border-b-2 border-marine pb-4 mr-8">
+                <span class="font-semibold text-marine body-font">Flights + Hotel</span>
+            </div>
+            <div class="pb-4">
+                <span class="text-gray-600 body-font">Hotel only</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN SECTION: 3 Columns -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div class="grid grid-cols-1 lg:grid-cols-[350px_1fr_420px] gap-6">
+
+            <!-- Left Column: Refine your holiday -->
+            <div class="card animate-fade-in-left animate-delay-4">
+                <h2 class="text-h3 text-marine mb-6">Refine your holiday</h2>
+
+                <!-- Hotel Image and Info -->
+                <div class="mb-6">
+                    <div class="relative mb-4">
+                        <img src="jumeirah.jpg"
+                            alt="Jumeirah Beach Hotel" class="w-full h-52 rounded-lg object-cover">
+                        <button class="heart-button" id="heartButton">
+                            <i class="far fa-heart heart-icon"></i>
+                        </button>
+                        <button id="viewPhotosBtn"
+                            class="absolute bottom-3 left-3 bg-white px-3 py-1 rounded-lg text-sm font-semibold body-font shadow-lg hover:bg-gray-50 transition-colors cursor-pointer">
+                            <i class="fas fa-camera mr-1"></i> View Photos               </button>
+                    </div>
+                    
+
+                    <!-- --- CHANGE 3: DIAMONDS REPLACED STARS --- -->
+                    <div class="star-rating mb-3">
+                        <i class="far fa-gem"></i>
+                        <i class="far fa-gem"></i>
+                        <i class="far fa-gem"></i>
+                        <i class="far fa-gem"></i>
+                        <i class="far fa-gem"></i>
+                    </div>
+
+                    <h3 class="text-xl font-bold text-marine mb-2">Jumeirah Beach Hotel</h3>
+                    <p class="text-small text-gray-600 mb-3 body-font">Jumeirah Beach, Dubai, United Arab Emirates</p>
+
+                    <div class="tripadvisor-rating">
+                        <div class="tripadvisor-logo"><img
+                                src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/tripadvisor.svg"
+                                alt="TripAdvisor"></div>
+                        <span class="tripadvisor-score">4.5</span>
+                        <span class="tripadvisor-reviews">(15,432 reviews)</span>
+                    </div>
+                    <br>
+
+                    <div class="flex space-x-3 mb-6">
+                        <button
+                            class="flex items-center text-small text-gray-600 border border-gray-300 rounded-lg px-3 py-2 hover:border-marine transition-all duration-300 body-font">
+                            <i class="fas fa-info-circle mr-2"></i>
+                            Hotel details
+                        </button>
+                        <button
+                            class="flex items-center text-small text-gray-600 border border-gray-300 rounded-lg px-3 py-2 hover:border-marine transition-all duration-300 body-font">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            Map
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Search Form -->
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-small text-gray-600 mb-2 body-font">
+                            <i class="fas fa-plane mr-2"></i>Departure from
+                        </label>
+                        <select class="form-input" id="airportSelect">
+                            <option value="any">Any airport</option>
+                            <option value="london">London (All airports)</option>
+                            <option value="manchester">Manchester</option>
+                            <option value="birmingham">Birmingham</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-small text-gray-600 mb-2 body-font">
+                            <i class="fas fa-calendar mr-2"></i>Duration
+                        </label>
+                        <select class="form-input" id="durationSelect">
+                            <option value="5">5 nights</option>
+                            <option value="3">3 nights</option>
+                            <option value="7">7 nights</option>
+                            <option value="14">14 nights</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-small text-gray-600 mb-2 body-font">
+                            <i class="fas fa-utensils mr-2"></i>Board basis
+                        </label>
+                        <select class="form-input" id="boardSelect">
+                            <option value="any">Any board basis</option>
+                            <option value="bb">Breakfast included</option>
+                            <option value="hb">Half board</option>
+                            <option value="fb">Full board</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-small text-gray-600 mb-2 body-font">
+                            <i class="fas fa-bed mr-2"></i>Rooms & Guests
+                        </label>
+                        <select class="form-input" id="roomsSelect">
+                            <option value="1-2">1 Room / 2 Adults</option>
+                            <option value="1-2-1">1 Room / 2 Adults, 1 Child</option>
+                            <option value="2-4">2 Rooms / 4 Adults</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-small text-gray-600 mb-2 body-font">
+                            <i class="fas fa-clock mr-2"></i>Flight preference
+                        </label>
+                        <select class="form-input" id="flightTimeSelect">
+                            <option value="any">Any flight time</option>
+                            <option value="morning">Morning</option>
+                            <option value="afternoon">Afternoon</option>
+                            <option value="evening">Evening</option>
+                        </select>
+                    </div>
+
+                    <button class="btn-primary mt-4" id="updateSearch">
+                        <i class="fas fa-search mr-2"></i>
+                        Update Search
+                    </button>
+                </div>
+
+                <!-- Price Match Guarantee -->
+                <div class="mt-6 p-4 bg-almond-75 rounded-lg">
+                    <div class="flex items-center text-small body-font">
+                        <i class="fas fa-check-circle text-marine mr-2"></i>
+                        <span class="font-medium">Price Match Guarantee</span>
+                    </div>
+                    <p class="text-xsmall text-gray-600 mt-1 body-font">We won't be beaten on price</p>
+                </div>
+            </div>
+
+            <!-- Middle Column: Price & Availability Calendar -->
+            <div class="calendar-container animate-fade-in-up animate-delay-5" style="height: 740px;">
+                <h2 class="text-h3 text-marine mb-4">Price & Availability</h2>
+
+                <div class="mb-4">
+                    <label class="block text-small font-medium text-gray-700 mb-2 body-font">
+                        Selected Date: <span id="selectedDateDisplay">Sun 30 Nov 2025</span>
+                    </label>
+                </div>
+
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-lg font-semibold text-marine" id="currentMonth">November 2025</h3>
+                    <div class="flex space-x-2">
+                        <button class="p-2 hover:bg-gray-100 rounded-lg transition-all duration-300" id="prevMonth">
+                            <i class="fas fa-chevron-left text-marine"></i>
+                        </button>
+                        <button class="p-2 hover:bg-gray-100 rounded-lg transition-all duration-300" id="nextMonth">
+                            <i class="fas fa-chevron-right text-marine"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Calendar Headers -->
+                <div class="calendar-grid mb-2">
+                    <div class="calendar-header">Mo</div>
+                    <div class="calendar-header">Tu</div>
+                    <div class="calendar-header">We</div>
+                    <div class="calendar-header">Th</div>
+                    <div class="calendar-header">Fr</div>
+                    <div class="calendar-header">Sa</div>
+                    <div class="calendar-header">Su</div>
+                </div>
+
+                <!-- Calendar Days Container -->
+                <div class="calendar-grid" id="calendarDays">
+                    <!-- Calendar days will be populated by JavaScript -->
+                </div>
+
+                <!-- Price toggle -->
+                <div class="flex items-center justify-between mt-6">
+                    <div class="flex items-center">
+                        <span class="text-small text-gray-600 mr-3 body-font">Per Person</span>
+                        <div class="toggle-switch" id="priceToggle">
+                            <div class="toggle-slider"></div>
+                        </div>
+                        <span class="text-small text-gray-600 ml-3 body-font">Total Price</span>
+                    </div>
+                    <div class="cheapest-badge">
+                        <span>Cheapest</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Flight & Hotel Offer -->
+            <div class="card animate-fade-in-right animate-delay-4 offer-card">
+                <!-- Offer Banner -->
+                <div class="offer-banner">
+                    <span>🏆 Cheapest holiday price</span>
+                    <span class="best-offer-tag">Best Offer</span>
+                </div>
+
+                <h3 class="text-xl font-bold text-marine mb-4">Flight & Hotel Offer</h3>
+
+                <!-- Hotel Details -->
+                <div class="mb-6">
+                    <h4 class="font-bold text-body">Jumeirah Beach Hotel</h4>
+                    <p class="text-small text-gray-600 mb-4 body-font">
+                        <span id="offerDate">Sun 30 Nov 2025</span>
+                        (<span id="offerNights">5 nights</span>)
+                        <span id="offerBoard">Breakfast included</span>
+                    </p>
+
+                    <!-- Outbound Flight -->
+                    <div class="mb-4 p-4 bg-gradient-to-r from-gray-50 to-almond-75 rounded-lg">
+                        <div class="flex items-center mb-3">
+                            <div class="airline-logo h-10 w-24 mr-4" id="outboundLogo">
+                                <img src="https://assets.planespotters.net/files/airlines/7/ajet-turkiye_d002f0_opr.png"
+                                    alt="AJet Logo">
+                            </div>
+                            <span class="text-small font-medium body-font">
+                                <span id="outboundDate">Sun 30 Nov 2025</span> - Outbound
+                            </span>
+                        </div>
+                        <div class="text-small space-y-2">
+                            <div class="flex items-center">
+                                <i class="fas fa-plane-departure text-marine mr-3 w-4"></i>
+                                <span class="flight-time">12:35</span>
+                                <span class="flight-airport ml-2">London Stansted (STN)</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-clock text-gray-400 mr-3 w-4"></i>
+                                <span class="flight-duration">11h 15m • 1 stop</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-plane-arrival text-marine mr-3 w-4"></i>
+                                <span class="flight-time">03:50+1</span>
+                                <span class="flight-airport ml-2">Dubai (DXB)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Return Flight -->
+                    <div class="mb-4 p-4 bg-gradient-to-r from-gray-50 to-almond-75 rounded-lg">
+                        <div class="flex items-center mb-3">
+                            <div class="airline-logo h-10 w-24 mr-4" id="returnLogo">
+                                <img src="https://assets.planespotters.net/files/airlines/7/ajet-turkiye_d002f0_opr.png"
+                                    alt="AJet Logo">
+                            </div>
+                            <span class="text-small font-medium body-font">
+                                <span id="returnDate">Fri 5 Dec 2025</span> - Return
+                            </span>
+                        </div>
+                        <div class="text-small space-y-2">
+                            <div class="flex items-center">
+                                <i class="fas fa-plane-departure text-marine mr-3 w-4"></i>
+                                <span class="flight-time">06:00</span>
+                                <span class="flight-airport ml-2">Dubai (DXB)</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-clock text-gray-400 mr-3 w-4"></i>
+                                <span class="flight-duration">12h 35m • 1 stop</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-plane-arrival text-marine mr-3 w-4"></i>
+                                <span class="flight-time">14:35</span>
+                                <span class="flight-airport ml-2">London Stansted (STN)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Protection Badges -->
+                    <div class="space-y-3">
+                        <div class="p-3 bg-almond-75 rounded-lg text-small body-font">
+                            <i class="fas fa-shield-alt text-marine mr-2"></i>
+                            ATOL protected
+                        </div>
+                        <div class="p-3 bg-almond-75 rounded-lg text-small body-font">
+                            <i class="fas fa-credit-card text-marine mr-2"></i>
+                            Flexible Hotel Changes
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pricing -->
+                <div class="border-t pt-4">
+                    <div class="text-right mb-4">
+                        <div class="text-small text-gray-600 line-through body-font">£3,121</div>
+                        <div class="text-small text-gray-600 body-font">Per person</div>
+                        <div class="text-3xl font-bold text-marine price-display" id="mainPrice">£1,459</div>
+                        <div class="text-small text-gray-600 mt-2 body-font">Total price</div>
+                        <div class="text-xl font-bold price-display" id="totalPrice">£2,918</div>
+                        <div class="text-small text-gray-600 mt-2 body-font">Secure today for</div>
+                        <div class="text-lg font-bold text-wine">£29 pp</div>
+                    </div>
+
+                    <!-- Payment Options -->
+                    <div class="mb-4">
+                        <div class="flex items-center justify-between cursor-pointer mb-2">
+                            <span class="font-semibold body-font">Payment options</span>
+                            <i class="fas fa-chevron-down text-gray-400"></i>
+                        </div>
+                        <div class="text-small text-gray-600 mb-2 body-font">Further charges</div>
+                        <p class="text-xsmall text-gray-500 body-font">Your hotel may charge additional fees, which must
+                            be paid there.</p>
+                    </div>
+
+                    <!-- Booking Buttons -->
+                    <div class="space-y-3">
+                        <button class="btn-primary py-3" id="selectHoliday">
+                            <i class="fas fa-check mr-2"></i>
+                            Select this holiday
+                        </button>
+                        <button class="btn-secondary py-3" id="alternativeFlights">
+                            <i class="fas fa-plane mr-2"></i>
+                            Alternative flights
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- BOTTOM SECTION: Alternative Flights -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 animate-fade-in-up animate-delay-5">
+        <div class="alt-flights-container">
+            <h2 class="text-h3 text-marine mb-6">Alternative Flights</h2>
+
+            <!-- Duration Tabs -->
+            <div class="duration-tabs" style="overflow-y: hidden;">
+                <div class="duration-tab" data-nights="2">2 Nights<br><small>from £999 pp</small></div>
+                <div class="duration-tab" data-nights="3">3 Nights<br><small>from £1,289 pp</small></div>
+                <div class="duration-tab" data-nights="4">4 Nights<br><small>from £1,269 pp</small></div>
+                <div class="duration-tab active" data-nights="5">5 Nights<br><small>from £1,459 pp</small></div>
+                <div class="duration-tab" data-nights="6">6-8 Nights<br><small>from £1,609 pp</small></div>
+                <div class="duration-tab" data-nights="9">9-11 Nights<br><small>from £2,039 pp</small></div>
+                <div class="duration-tab" data-nights="12">12-15 Nights<br><small>from £2,539 pp</small></div>
+            </div>
+
+            <!-- Flights Layout: Filters + Results -->
+            <div class="flights-layout">
+                <!-- Left: Comprehensive Filters -->
+                <div class="space-y-4">
+                    <!-- Stops Filter -->
+                    <div class="filter-section">
+                        <div class="filter-header">
+                            <span>Stops</span>
+                            <i class="fas fa-chevron-up text-marine text-xs"></i>
+                        </div>
+                        <div class="filter-content">
+                            <div class="filter-option">
+                                <input type="checkbox" id="stops-any" checked>
+                                <label for="stops-any">Any</label>
+                            </div>
+                            <div class="filter-option">
+                                <input type="checkbox" id="stops-direct">
+                                <label for="stops-direct">Direct</label>
+                                <span class="filter-price">£1,469</span>
+                            </div>
+                            <div class="filter-option">
+                                <input type="checkbox" id="stops-1stop" checked>
+                                <label for="stops-1stop">1 stop</label>
+                                <span class="filter-price">£1,459</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Departure From Filter -->
+                    <div class="filter-section">
+                        <div class="filter-header">
+                            <span>Departure from</span>
+                            <i class="fas fa-chevron-up text-marine text-xs"></i>
+                        </div>
+                        <div class="filter-content">
+                            <div class="filter-option">
+                                <input type="checkbox" id="dept-any" checked>
+                                <label for="dept-any">Any</label>
+                            </div>
+                            <div class="filter-option">
+                                <input type="checkbox" id="dept-aberdeen">
+                                <label for="dept-aberdeen">Aberdeen</label>
+                                <span class="filter-price">£1,679</span>
+                            </div>
+                            <div class="filter-option">
+                                <input type="checkbox" id="dept-belfast">
+                                <label for="dept-belfast">Belfast City</label>
+                                <span class="filter-price">£1,689</span>
+                            </div>
+                            <div class="filter-option">
+                                <input type="checkbox" id="dept-birmingham">
+                                <label for="dept-birmingham">Birmingham</label>
+                                <span class="filter-price">£1,459</span>
+                            </div>
+                            <div class="filter-option">
+                                <input type="checkbox" id="dept-cardiff">
+                                <label for="dept-cardiff">Cardiff</label>
+                                <span class="filter-price">£1,919</span>
+                            </div>
+                            <div class="filter-option">
+                                <input type="checkbox" id="dept-edinburgh">
+                                <label for="dept-edinburgh">Edinburgh</label>
+                                <span class="filter-price">£1,479</span>
+                            </div>
+                            <div class="filter-option">
+                                <input type="checkbox" id="dept-glasgow">
+                                <label for="dept-glasgow">Glasgow</label>
+                                <span class="filter-price">£1,609</span>
+                            </div>
+                            <div class="filter-option">
+                                <input type="checkbox" id="dept-humberside">
+                                <label for="dept-humberside">Humberside</label>
+                                <span class="filter-price">£1,799</span>
+                            </div>
+                            <div class="filter-option">
+                                <input type="checkbox" id="dept-leeds">
+                                <label for="dept-leeds">Leeds Bradford</label>
+                                <span class="filter-price">£1,759</span>
+                            </div>
+                            <div class="filter-option">
+                                <input type="checkbox" id="dept-gatwick">
+                                <label for="dept-gatwick">London Gatwick</label>
+                                <span class="filter-price">£1,479</span>
+                            </div>
+                            <div class="filter-option">
+                                <input type="checkbox" id="dept-heathrow">
+                                <label for="dept-heathrow">London Heathrow</label>
+                                <span class="filter-price">£1,489</span>
+                            </div>
+                            <div class="filter-option">
+                                <input type="checkbox" id="dept-stansted">
+                                <label for="dept-stansted">London Stansted</label>
+                                <span class="filter-price">£1,459</span>
+                            </div>
+                            <div class="filter-option">
+                                <input type="checkbox" id="dept-manchester">
+                                <label for="dept-manchester">Manchester</label>
+                                <span class="filter-price">£1,389</span>
+                            </div>
+                            <div class="filter-option">
+                                <input type="checkbox" id="dept-newcastle">
+                                <label for="dept-newcastle">Newcastle</label>
+                                <span class="filter-price">£1,609</span>
+                            </div>
+                            <div class="filter-option">
+                                <input type="checkbox" id="dept-norwich">
+                                <label for="dept-norwich">Norwich</label>
+                                <span class="filter-price">£1,849</span>
+                            </div>
+                            <div class="filter-option">
+                                <input type="checkbox" id="dept-southampton">
+                                <label for="dept-southampton">Southampton</label>
+                                <span class="filter-price">£1,789</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Airlines Filter WITH LOGOS -->
+                    <div class="filter-section">
+                        <div class="filter-header">
+                            <span>Airlines</span>
+                            <i class="fas fa-chevron-up text-marine text-xs"></i>
+                        </div>
+                        <div class="filter-content">
+                            <div class="airline-logo-grid" id="airline-filter-grid">
+                                <!-- Airline logos will be populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Outbound Times Filter -->
+                    <div class="filter-section">
+                        <div class="filter-header">
+                            <span>Outbound times</span>
+                            <i class="fas fa-chevron-up text-marine text-xs"></i>
+                        </div>
+                        <div class="filter-content">
+                            <div class="filter-option">
+                                <input type="checkbox" id="out-any" checked>
+                                <label for="out-any">Any</label>
+                            </div>
+                            <div class="filter-option">
+                                <input type="checkbox" id="out-early">
+                                <label for="out-early">Early Morning (00:00-06:59)</label>
+                                <span class="filter-price">£1,459</span>
+                            </div>
+                            <div class="filter-option">
+                                <input type="checkbox" id="out-morning">
+                                <label for="out-morning">Morning (07:00-11:59)</label>
+                                <span class="filter-price">£1,479</span>
+                            </div>
+                            <div class="filter-option">
+                                <input type="checkbox" id="out-afternoon">
+                                <label for="out-afternoon">Afternoon (12:00-16:59)</label>
+                                <span class="filter-price">£1,459</span>
+                            </div>
+                            <div class="filter-option">
+                                <input type="checkbox" id="out-evening">
+                                <label for="out-evening">Evening (17:00-20:59)</label>
+                                <span class="filter-price">£1,409</span>
+                            </div>
+                            <div class="filter-option">
+                                <input type="checkbox" id="out-night">
+                                <label for="out-night">Night time (21:00-23:59)</label>
+                                <span class="filter-price">£1,469</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Inbound Times Filter -->
+                    <div class="filter-section">
+                        <div class="filter-header">
+                            <span>Inbound times</span>
+                            <i class="fas fa-chevron-up text-marine text-xs"></i>
+                        </div>
+                        <div class="filter-content">
+                            <div class="filter-option">
+                                <input type="checkbox" id="in-any" checked>
+                                <label for="in-any">Any</label>
+                            </div>
+                            <div class="filter-option">
+                                <input type="checkbox" id="in-early">
+                                <label for="in-early">Early Morning (00:00-06:59)</label>
+                                <span class="filter-price">£1,459</span>
+                            </div>
+                            <div class="filter-option">
+                                <input type="checkbox" id="in-morning">
+                                <label for="in-morning">Morning (07:00-11:59)</label>
+                                <span class="filter-price">£1,479</span>
+                            </div>
+                            <div class="filter-option">
+                                <input type="checkbox" id="in-afternoon">
+                                <label for="in-afternoon">Afternoon (12:00-16:59)</label>
+                                <span class="filter-price">£1,479</span>
+                            </div>
+                            <div class="filter-option">
+                                <input type="checkbox" id="in-evening">
+                                <label for="in-evening">Evening (17:00-20:59)</label>
+                                <span class="filter-price">£1,579</span>
+                            </div>
+                            <div class="filter-option">
+                                <input type="checkbox" id="in-night">
+                                <label for="in-night">Night time (21:00-23:59)</label>
+                                <span class="filter-price">£1,529</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Journey Duration Filter -->
+                    <div class="filter-section">
+                        <div class="filter-header">
+                            <span>Journey duration</span>
+                            <i class="fas fa-chevron-up text-marine text-xs"></i>
+                        </div>
+                        <div class="filter-content">
+                            <div class="mb-4">
+                                <div class="flex justify-between text-xs text-gray-600 mb-3">
+                                    <span>7.5 hours</span>
+                                    <span>13.5 hours</span>
+                                </div>
+                                <input type="range" min="7.5" max="13.5" value="13.5" step="0.5" class="range-slider"
+                                    id="durationSlider">
+                                <div class="text-center mt-2">
+                                    <span class="text-sm font-medium text-marine" id="durationValue">13.5 hours</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Red Eye Flights Filter -->
+                    <div class="filter-section">
+                        <div class="filter-header">
+                            <span>Red eye flights</span>
+                            <i class="fas fa-chevron-up text-marine text-xs"></i>
+                        </div>
+                        <div class="filter-content">
+                            <div class="filter-option">
+                                <input type="checkbox" id="redeye-hide">
+                                <label for="redeye-hide">Hide red-eye flights</label>
+                                <span class="filter-price">£1,569</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Flight Results -->
+                <div class="flight-results" id="flightResults">
+                    <!-- Flight results will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination" id="pagination-container">
+                <!-- Pagination buttons will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer - Exact match -->
+    <footer style="margin-top: 64px;">
+        <style>
+            * {
+                -webkit-tap-highlight-color: transparent;
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+
+            :root {
+                --destinology-black: #1f1f1f;
+                --destinology-black-faded: #333;
+                --destinology-grey: #7b8085;
+                --destinology-grey-faded: #7b808594;
+                --destinology-white: #fff;
+                --destinology-white-faded: #ffffff94;
+                --destinology-purple: #612c4f;
+                --destinology-purple-faded: #612c4f94;
+                --destinology-purple-background: #612c4f26;
+                --destinology-green: #00827b;
+                --destinology-green-faded: #00827b94;
+                --destinology-yellow: #ffc46c;
+                --destinology-yellow-faded: #ffc46c94;
+                --destinology-blue: #003764;
+                --destinology-blue-faded: #00376494;
+                --secondary-cta-color: #612c4f;
+                --secondary-cta-color-faded: #612c4f94;
+                --primary-link-color: #562d33;
+                --primary-link-color-faded: #783f48;
+                --lifestyle-primary-color: #4f4f4f;
+                --lifestyle-primary-color-faded: #4f4f4fa1;
+                --destinology-marine: #153b3c;
+                --destinology-marine-faded: #20595b;
+                --destinology-wine: #562d33;
+                --destinology-wine-faded: #783f48;
+                --destinology-wine-background: #562d333b;
+                --destinology-terracotta: #925d56;
+                --destinology-terracotta-faded: #ac7872;
+                --destinology-sand: #c9a582;
+                --destinology-sand-faded: #dac2a9;
+                --destinology-almond: #e6d7cb;
+                --destinology-almond-faded: #f8f4f1;
+            }
+
+            body {
+                color: #212529;
+                font-size: 1rem;
+                line-height: 1.5;
+                margin: 0;
+                text-align: left;
+                width: 100%;
+                font-family: Poppins, sans-serif;
+                font-weight: 400;
+            }
+
+            .footer {
+                -webkit-tap-highlight-color: transparent;
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+                color: #212529;
+                font-size: 1rem;
+                line-height: 1.5;
+                margin: 0;
+                text-align: left;
+                width: 100%;
+                font-family: Poppins, sans-serif;
+                font-weight: 400;
+                background-color: #1f1f1f;
+                color: #fff !important;
+            }
+
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 15px;
+            }
+
+            .row {
+                display: flex;
+                flex-wrap: wrap;
+                margin: 0 -15px;
+            }
+
+            .col-md-8 {
+                flex: 0 0 66.666667%;
+                max-width: 66.666667%;
+                padding: 0 15px;
+            }
+
+            .col-md-4 {
+                flex: 0 0 33.333333%;
+                max-width: 33.333333%;
+                padding: 0 15px;
+            }
+
+            .col-sm-12 {
+                flex: 0 0 100%;
+                max-width: 100%;
+                padding: 0 15px;
+            }
+
+            .col-xs-12 {
+                flex: 0 0 100%;
+                max-width: 100%;
+                padding: 0 15px;
+            }
+
+            .col-sm-6 {
+                flex: 0 0 50%;
+                max-width: 50%;
+                padding: 0 15px;
+            }
+
+            .col-sm-2 {
+                flex: 0 0 16.666667%;
+                max-width: 16.666667%;
+                padding: 0 15px;
+            }
+
+            .col-sm-10 {
+                flex: 0 0 83.333333%;
+                max-width: 83.333333%;
+                padding: 0 15px;
+            }
+
+            /* Sign up container */
+            .sign-up-container {
+                background-image: url(https://res.cloudinary.com/destinology/image/upload/v1727104036/Textures/Marine/1.png);
+                background-size: cover;
+                background-position: center;
+                padding: 60px 0;
+            }
+
+            .sign-up-text-container {
+                padding-right: 40px;
+            }
+
+            .sign-up-text-title {
+                font-size: 2.5rem;
+                font-weight: 600;
+                margin-bottom: 20px;
+                line-height: 1.2;
+            }
+
+            .sign-up-text-subtitle {
+                font-size: 1rem;
+                line-height: 1.6;
+                margin-bottom: 30px;
+                color: rgba(255, 255, 255, 0.9);
+            }
+
+            .btn {
+                display: inline-block;
+                padding: 12px 30px;
+                text-decoration: none;
+                border-radius: 5px;
+                font-weight: 500;
+                transition: all 0.3s ease;
+                border: none;
+                cursor: pointer;
+                font-family: inherit;
+            }
+
+            .btn-white {
+                background-color: #fff;
+                color: var(--destinology-marine);
+            }
+
+            .btn-white:hover {
+                background-color: #f8f9fa;
+            }
+
+            .sign-up-image {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .sign-up-image img {
+                max-width: 350px;
+                height: 450px;
+                object-fit: cover;
+                border-radius: 8px;
+            }
+
+            /* Links container */
+            .links-container {
+                padding: 60px 0 40px;
+            }
+
+            .links-container img {
+                height: 40px;
+                margin-bottom: 30px;
+            }
+
+            .footer-contact {
+                margin-bottom: 30px;
+            }
+
+            .footer-contact div {
+                display: flex;
+                align-items: center;
+                margin-bottom: 12px;
+                font-size: 0.9rem;
+            }
+
+            .footer-contact svg {
+                width: 16px;
+                height: 16px;
+                margin-right: 12px;
+                color: #fff;
+            }
+
+            .footer-contact a {
+                color: #fff;
+                text-decoration: none;
+            }
+
+            .footer-contact a:hover {
+                text-decoration: underline;
+            }
+
+            .dot-digital-iframe {
+                width: 100%;
+                border: none;
+                height: 100px;
+                background-color: rgb(31, 31, 31);
+            }
+
+            .links-header {
+                font-size: 25px;
+                font-weight: 400;
+                margin-bottom: 20px;
+                color: #fff;
+                font-family:'The Seasons', serif;;
+                ;
+            }
+
+            .links-container ul {
+                list-style: none;
+                padding: 0;
+            }
+
+            .links-container li {
+                margin-bottom: 8px;
+            }
+
+            .links-container a {
+                color: rgba(255, 255, 255, 0.8);
+                text-decoration: none;
+                font-size: 0.9rem;
+                transition: color 0.3s ease;
+            }
+
+            .links-container a:hover {
+                color: #fff;
+                text-decoration: underline;
+            }
+
+            /* Travel Aware */
+            .travel-aware {
+                background-color: var(--destinology-black-faded);
+                padding: 30px 0;
+            }
+
+            .travel-aware img {
+                width: 80px;
+                filter: invert(1);
+                margin-top: 8px;
+            }
+
+            .travel-aware-title {
+                font-size: 20px;
+                font-weight: 300;
+                margin-bottom: 15px;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                font-family: 'The Seasons', serif;
+            }
+
+            .travel-aware-text {
+                font-size: .9rem;
+                line-height: 1.6;
+                color: rgba(255, 255, 255, 0.8);
+                margin-bottom: 12px;
+                font-family: Poppins, sans-serif;
+            }
+
+            .dest-link {
+                color: white;
+            }
+
+            .dest-link:hover {
+                text-decoration: underline;
+            }
+
+            /* Footer bottom */
+            .footer-bottom-container {
+                padding: 30px 0;
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .footer-bottom {
+                display: flex;
+                align-items: center;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            .footer-bottom span {
+                font-size: 0.85rem;
+                color: var(--destinology-almond-faded);
+            }
+
+            .footer-bottom-card-col {
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                gap: 20px;
+            }
+
+            .abta-logo-footer svg,
+            .atol-logo-footer svg {
+                fill: #fff;
+                opacity: 0.8;
+            }
+
+            .abta-logo-footer svg {
+                width: 77px;
+                height: 32px;
+            }
+
+            .atol-logo-footer svg {
+                width: 56px;
+                height: 32px;
+            }
+
+            .footer-bottom-card-col img {
+                height: 24px;
+                opacity: 0.8;
+            }
+
+            .cls-1 {
+                fill: #fff;
+            }
+
+            @media (max-width: 768px) {
+
+                .col-md-8,
+                .col-md-4,
+                .col-sm-6,
+                .col-sm-2,
+                .col-sm-10 {
+                    flex: 0 0 100%;
+                    max-width: 100%;
+                    margin-bottom: 30px;
+                    text-align: center;
+                }
+
+                .sign-up-text-title {
+                    font-size: 2rem;
+                }
+
+                .sign-up-image {
+                    margin-top: 30px;
+                }
+
+                .sign-up-image img {
+                    max-width: 250px;
+                    height: 320px;
+                }
+
+                .footer-bottom {
+                    justify-content: center;
+                }
+
+                .footer-bottom-card-col {
+                    justify-content: center;
+                    margin-top: 20px;
+                }
+
+                .travel-aware .row {
+                    flex-direction: column;
+                    text-align: center;
+                }
+
+                .travel-aware img {
+                    margin-bottom: 15px;
+                }
+
+                .links-container {
+                    text-align: center;
+                }
+
+                .footer-contact {
+                    display: inline-block;
+                    text-align: left;
+                }
+
+                .links-container ul {
+                    text-align: center;
+                }
+
+                .footer-bottom-container {
+                    text-align: center;
+                    background-color: var(--almond-75);
+                }
+
+                .abta,
+                .atol {
+                    filter: invert(1);
+                }
+
+                .logo{
+                    margin-left: 70px;
+                }
+                
+                .dot-digital-iframe{
+                    margin-left: 20px;
+                }
+
+            }
+        </style>
+        </head>
+
+        <body>
+            <div class="footer">
+
+
+                <div class="container links-container">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6">
+                            <img src="https://res.cloudinary.com/destinology/image/upload/v1726650334/Logos/Base/White/White_Wide_SVG.svg"
+                                alt="Destinology" class="logo">
+                            <div class="footer-contact">
+                                <div>
+                                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="phone"
+                                        role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                                        class="svg-inline--fa fa-phone">
+                                        <path fill="currentColor"
+                                            d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z">
+                                        </path>
+                                    </svg>
+                                    <a href="tel:01204208495" class="InfinityNumber">01204&nbsp;208495</a>
+                                </div>
+                                <div>
+                                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="envelope"
+                                        role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                                        class="svg-inline--fa fa-envelope">
+                                        <path fill="currentColor"
+                                            d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48L48 64zM0 176L0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-208L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z">
+                                        </path>
+                                    </svg>
+                                    <a href="mailto:helpdesk@destinology.co.uk">helpdesk@destinology.co.uk</a>
+                                </div>
+                                <div>
+                                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="clock"
+                                        role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                                        class="svg-inline--fa fa-clock">
+                                        <path fill="currentColor"
+                                            d="M256 0a256 256 0 1 1 0 512A256 256 0 1 1 256 0zM232 120l0 136c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2 280 120c0-13.3-10.7-24-24-24s-24 10.7-24 24z">
+                                        </path>
+                                    </svg>
+                                    <span>09:00 - 19:00</span>
+                                </div>
+                            </div>
+                            <iframe src="https://r1.dotdigital-pages.com/p/7NH7-2H0/core-footer?pfredir=1"
+                                class="dot-digital-iframe"></iframe>
+                        </div>
+                        <div class="col-xs-12 col-sm-2">
+                            <p class="links-header">Destinations</p>
+                            <ul>
+                                <li><a href="/destinations/indian-ocean">Indian Ocean</a></li>
+                                <li><a href="/destinations/middle-east">Middle East</a></li>
+                                <li><a href="/destinations/europe">Europe</a></li>
+                                <li><a href="/destinations/caribbean">Caribbean &amp; Mexico</a></li>
+                                <li><a href="/destinations/far-east">Far East</a></li>
+                                <li><a href="/destinations/north-america">North America</a></li>
+                                <li><a
+                                        href="https://tailor-made-holidays.destinology.co.uk/destinations/africa">Africa</a>
+                                </li>
+                                <li><a href="/destinations/australasia">Australasia</a></li>
+                                <li><a href="https://cruise.destinology.co.uk">Cruise</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-12 col-sm-2">
+                            <p class="links-header">Useful Links</p>
+                            <ul>
+                                <li><a href="/contact-destinology">Contact Us</a></li>
+                                <li><a href="/about-destinology">About Us</a></li>
+                                <li><a href="/our-luxury-travel-concierge">Meet Our Concierge</a></li>
+                                <li><a href="/careers">Careers</a></li>
+                                <li><a href="https://www.covered2go.co.uk/profile/destinology" target="_blank">Travel
+                                        Insurance</a></li>
+                                <li><a href="https://www.holidayextras.com/destinology/parking.html"
+                                        target="_blank">Holiday
+                                        Extras</a></li>
+                                <li><a href="/frequently-asked-questions">FAQs</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-12 col-sm-2">
+                            <p class="links-header">Legal</p>
+                            <ul>
+                                <li><a href="/terms-and-conditions#bookingConditions">Booking Terms &amp; Conditions</a>
+                                </li>
+                                <li><a href="/terms-and-conditions#visa">Visa Information</a></li>
+                                <li><a href="/your-key-rights">Your Key Rights</a></li>
+                                <li><a href="/DestinologyModernSlaveryStatement2021.pdf" target="_blank">Modern Slavery
+                                        Statement</a></li>
+                                <li><a href="/terms-and-conditions#privacy">Privacy Policy</a></li>
+                                <li><a href="/cookie-policy">Cookie Policy</a></li>
+                                <li><a href="/sitemap.xml" target="_blank">Sitemap</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="travel-aware">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-2"
+                                style="display: flex; justify-content: start; align-items: center;">
+                                <img src="https://res.cloudinary.com/destinology/image/upload/f_auto,q_auto/v1540375057/fusion/travel-aware-black.png"
+                                    alt="Travel Aware">
+                            </div>
+                            <div class="col-xs-12 col-sm-10">
+                                <h3 class="travel-aware-title">
+                                    TRAVEL AWARE – PREPARING FOR SAFE AND HEALTHY TRAVEL ABROAD
+                                </h3>
+                                <p class="travel-aware-text">
+                                    The Foreign, Commonwealth &amp; Development Office (FCDO) provide
+                                    the latest travel advice by country including safety and security,
+                                    entry requirements, travel warnings and health. For the latest
+                                    FCDO advice please refer to
+                                    <a target="_blank" href="https://travelaware.campaign.gov.uk/"
+                                        class="dest-link">travelaware.campaign.gov.uk</a>
+                                </p>
+                                <p class="travel-aware-text">
+                                    Current travel health information can be found by visiting
+                                    <a target="_blank" href="https://travelhealthpro.org.uk/"
+                                        class="dest-link">travelhealthpro.org.uk/</a>
+                                    a resource set up by the Department of Health. The advice can
+                                    change on all sites so please check regularly for updates.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container footer-bottom-container" style="border-top-width: 0px;padding-top: 0px;">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-8 footer-bottom-col">
+                            <ol class="footer-bottom" style="transform: translateY(30px);">
+
+                                <li class="first"><span>© Destinology 2025. All Rights Reserved</span></li>
+                            </ol>
+                        </div>
+                        <div class="col-xs-12 col-md-4 footer-bottom-card-col">
+                            <svg version="1.1" viewBox="0 0 512 234.52" xmlns="http://www.w3.org/2000/svg"
+                                style="width: 77px; height: 32px;" class="abta">
+                                <path
+                                    d="m294.3,131.02h-36.58V15.67h36.04c23.29,0,33.97,15.94,33.97,29.94,0,11.03-4.56,18.38-13.81,23.99v.34c13.31,2.98,21.34,12.26,21.34,26.27,0,16.45-11.91,34.82-40.95,34.82m-3.5-97.48h-11.91v30.1h11.17c9.5,0,16.49-6.11,16.49-15.77,0-8.21-5.61-14.33-15.75-14.33m4.01,47.77h-15.92v31.88h13.48c14.19,0,21.17-6.34,21.17-16.82,0-8.94-6.83-15.07-18.72-15.07"
+                                    class="cls-1"></path>
+                                <polygon
+                                    points="420.21 33.36 389.49 33.36 389.49 131.02 368.13 131.02 368.13 33.36 334.71 33.36 334.71 15.67 427.1 15.67"
+                                    class="cls-1"></polygon>
+                                <path
+                                    d="m225.48,131.02l-11.39-28.92h-41.18l-10.69,28.92h-21.2L185.64,15.64h15.89l46.21,115.38h-22.26Zm-27.33-72.72c-2.12-5.79-3.52-10.51-4.38-14.34h-.19c-.69,4.03-2.25,8.56-4.19,14.01l-9.99,26.88h28.09l-9.33-26.54Z"
+                                    class="cls-1"></path>
+                                <path
+                                    d="m489.72,131.02l-11.37-28.92h-41.19l-10.69,28.92h-21.2l44.62-115.38h15.89l46.21,115.38h-22.28Zm-27.31-72.72c-2.12-5.79-3.51-10.51-4.39-14.34h-.18c-.69,4.03-2.27,8.56-4.19,14.01l-9.99,26.88h28.07l-9.32-26.54Z"
+                                    class="cls-1"></path>
+                                <path
+                                    d="m69.72,0c-2.21,0-4.38.11-6.52.3v11.22h-.01v123.18h.01v4.4c2.15.2,4.32.33,6.52.33,38.5,0,69.71-31.22,69.71-69.73S108.22,0,69.72,0m25.49,76.06c-.29,4.45-.86,8.79-1.72,13.02h-16.35v-13.02h18.07Zm-18.07-13.01v-13.02h16.25c.89,4.22,1.49,8.56,1.78,13.02h-18.03Zm31.76,13.01h16.36c-.51,4.53-1.53,8.88-3.06,13.02h-15.03c.87-4.23,1.45-8.56,1.74-13.02m-.01-13.01c-.31-4.46-.93-8.8-1.82-13.02h15.01c1.55,4.12,2.62,8.47,3.15,13.02h-16.33Zm6.18-26.04h-11.78c-2.34-6.29-5.33-12.15-8.87-17.49,8.22,4.06,15.31,10.09,20.65,17.49m-25.42,0h-12.51V14.31c5.17,6.65,9.41,14.31,12.51,22.71m-12.51,88.11v-23.02h12.64c-3.1,8.5-7.38,16.28-12.62,23.02h-.02Zm17.42-5.33c3.57-5.4,6.57-11.34,8.91-17.7h11.82c-5.34,7.47-12.44,13.57-20.73,17.7"
+                                    class="cls-1"></path>
+                                <path d="m56.61,56.56v-5.29L23.23,17.89c-1.86,1.66-3.63,3.42-5.29,5.27l33.41,33.4h5.26Z"
+                                    class="cls-1">
+                                </path>
+                                <path
+                                    d="m56.61 82.48v5.29l-33.38 33.38c-1.86-1.66-3.63-3.42-5.29-5.28l33.41-33.39h5.26z"
+                                    class="cls-1">
+                                </path>
+                                <path d="m56.61,63.21H.31c-.2,2.13-.31,4.3-.31,6.48s.11,4.34.31,6.5h56.29v-12.98Z"
+                                    class="cls-1"></path>
+                                <path d="m14.28,27.58C7.91,35.95,3.4,45.81,1.38,56.56h41.88L14.28,27.58Z" class="cls-1">
+                                </path>
+                                <path d="m56.61,43.18V1.34c-10.73,2.03-20.58,6.52-28.97,12.87l28.97,28.97Z"
+                                    class="cls-1">
+                                </path>
+                                <path d="m27.65 124.81c8.39 6.35 18.23 10.85 28.95 12.89v-41.84l-28.95 28.95z"
+                                    class="cls-1">
+                                </path>
+                                <path d="m43.25,82.48H1.38c2.03,10.74,6.53,20.6,12.9,28.98l28.98-28.98Z" class="cls-1">
+                                </path>
+                                <path
+                                    d="m505.77,233.71v-37.2h-13.48v-4.98c1.76,0,3.47-.13,5.12-.4,1.66-.27,3.17-.77,4.51-1.51,1.34-.72,2.47-1.72,3.4-3,.93-1.27,1.57-2.88,1.9-4.83h4.76v51.92h-6.22Zm-40.71,0v-37.2h-13.48v-4.98c1.76,0,3.47-.13,5.12-.4,1.66-.27,3.16-.77,4.51-1.51,1.34-.72,2.47-1.72,3.4-3,.93-1.27,1.57-2.88,1.9-4.83h4.76v51.92h-6.22Zm-22.84-17.65v5.5h-7.03v12.15h-5.86v-12.15h-22.77v-6.01l23.65-33.75h4.98v34.27h7.03Zm-12.89-25.41h-.16l-17.27,25.41h17.43v-25.41Zm-49.2,16.08c-1.31.6-2.45,1.43-3.38,2.48-.93,1.05-1.62,2.29-2.09,3.74-.46,1.43-.69,2.97-.69,4.57s.24,3.13.72,4.54c.49,1.42,1.19,2.64,2.1,3.66.89,1.02,2.01,1.84,3.36,2.45,1.34.61,2.87.92,4.58.92s3.21-.3,4.5-.92c1.29-.6,2.37-1.45,3.25-2.52.88-1.07,1.55-2.31,2.01-3.7.47-1.39.7-2.84.7-4.35,0-1.62-.2-3.15-.63-4.58-.41-1.43-1.06-2.69-1.93-3.74-.88-1.05-1.98-1.89-3.30-2.52-1.31-.64-2.86-.95-4.6-.95s-3.3.3-4.62.92m11.27-17.32c-1.51-1.41-3.51-2.12-6-2.12-2.63,0-4.76.65-6.36,1.94-1.62,1.29-2.87,2.93-3.77,4.91-.9,1.98-1.53,4.11-1.87,6.4-.34,2.3-.54,4.45-.59,6.45l.16.14c1.46-2.39,3.28-4.12,5.45-5.2s4.68-1.62,7.51-1.62c2.48,0,4.71.43,6.69,1.28,1.98.86,3.64,2.05,4.99,3.56,1.34,1.52,2.37,3.29,3.11,5.34.72,2.05,1.1,4.28,1.1,6.67,0,1.9-.3,3.88-.88,5.93-.59,2.05-1.55,3.92-2.89,5.61-1.34,1.68-3.12,3.07-5.34,4.17-2.23,1.1-4.98,1.65-8.24,1.65-3.86,0-6.96-.78-9.29-2.35-2.35-1.55-4.15-3.56-5.42-6-1.27-2.43-2.11-5.12-2.52-8.05-.42-2.93-.63-5.76-.63-8.5,0-3.56.30-7.02.92-10.35.61-3.34,1.65-6.3,3.11-8.9,1.47-2.59,3.42-4.66,5.86-6.22,2.45-1.57,5.52-2.35,9.23-2.35,4.29,0,7.7,1.13,10.25,3.41,2.53,2.27,4,5.54,4.39,9.85h-6.22c-.29-2.35-1.19-4.22-2.71-5.64m-47.73,44.3h-6.96v-21.38l-20.2-30.89h8.27l15.67,24.89,15.3-24.89h7.91l-19.99,30.89v21.38Zm-33.46,0h-8.12v-8.12h8.12v8.12Zm-52.42-26.69c.78-2.42,1.95-4.52,3.52-6.3,1.55-1.77,3.48-3.18,5.79-4.21,2.29-1.02,4.93-1.53,7.91-1.53s5.67.51,7.94,1.53c2.27,1.02,4.18,2.43,5.74,4.21,1.57,1.78,2.74,3.88,3.52,6.3.78,2.41,1.17,5.01,1.17,7.8s-.39,5.36-1.17,7.76c-.78,2.39-1.95,4.47-3.52,6.26-1.55,1.78-3.47,3.17-5.74,4.17-2.28,1-4.92,1.51-7.94,1.51s-5.62-.51-7.91-1.51c-2.3-1-4.23-2.39-5.79-4.17-1.57-1.78-2.74-3.87-3.52-6.26-.78-2.4-1.17-4.98-1.17-7.76s.39-5.39,1.17-7.8m6.34,13.91c.6,1.78,1.45,3.27,2.52,4.46,1.07,1.21,2.34,2.12,3.77,2.75,1.43.64,2.97.95,4.58.95s3.13-.31,4.57-.95c1.45-.63,2.7-1.54,3.77-2.75,1.07-1.19,1.92-2.68,2.53-4.46.6-1.78.92-3.82.92-6.11s-.31-4.34-.92-6.11c-.61-1.78-1.46-3.29-2.53-4.51-1.07-1.22-2.33-2.15-3.77-2.78-1.43-.63-2.97-.95-4.57-.95s-3.15.33-4.58.95c-1.43.64-2.7,1.57-3.77,2.78-1.07,1.22-1.92,2.72-2.52,4.51-.61,1.77-.92,3.81-.92,6.11s.3,4.33.92,6.11m-49.98-39.5l27.53,42.39h.14v-42.39h6.59v52.28h-7.62l-27.3-41.96h-.16v41.96h-6.58v-52.28h7.39Zm-53.23,0l20.43,52.28h-7.69l-5.7-15.74h-22.12l-5.86,15.74h-7.1l20.36-52.28h7.68Zm4.83,30.68l-8.71-24.39h-.14l-8.86,24.39h17.72Zm-67.57-24.82v-5.86h41.8v5.86h-17.42v46.42h-6.96v-46.42h-17.43Zm-20.2,40.56c3.07,0,5.47-.83,7.21-2.5,1.74-1.65,2.59-3.95,2.59-6.88,0-1.7-.31-3.12-.94-4.24-.64-1.12-1.48-2.01-2.53-2.68-1.05-.65-2.25-1.12-3.63-1.39-1.36-.27-2.77-.4-4.24-.4h-15.89v18.08h17.43Zm-5.42-46.42c1.12,0,2.33.01,3.63.04,1.29.02,2.57.1,3.85.22,1.27.12,2.45.31,3.54.55s2.04.6,2.82,1.1c1.71,1.02,3.16,2.43,4.35,4.24,1.21,1.81,1.8,4.03,1.8,6.67,0,2.78-.66,5.18-2.01,7.21-1.34,2.03-3.25,3.53-5.75,4.51v.14c3.23.69,5.69,2.15,7.4,4.39,1.71,2.25,2.57,4.98,2.57,8.21,0,1.9-.35,3.76-1.02,5.56-.69,1.81-1.7,3.41-3.05,4.8-1.34,1.4-3,2.52-4.98,3.38-1.98.84-4.26,1.28-6.85,1.28h-25.25v-52.28h18.96Zm1.9,22.48c3.95,0,6.8-.7,8.53-2.09,1.72-1.4,2.59-3.48,2.59-6.27,0-1.86-.29-3.31-.88-4.39-.58-1.07-1.39-1.9-2.41-2.5-1.02-.58-2.21-.96-3.56-1.13-1.34-.17-2.76-.25-4.28-.25h-13.91v16.62h13.91Zm-46.42-22.48l20.43,52.28h-7.69l-5.71-15.74H12.96l-5.86,15.74H0l20.35-52.28h7.69Zm4.83,30.68l-8.71-24.39h-.14l-8.86,24.39h17.72Z"
+                                    class="cls-1"></path>
+                            </svg>
+                            <svg version="1.1" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"
+                                style="width: 56px; height: 32px;" class="atol">
+                                <path
+                                    d="m267.67 232.3c29.24 58.17 88.05 58.9 88.05 58.9l30.08-169.26-74.52-13.24s-83.96 43.19-43.6 123.6"
+                                    class="cls-1"></path>
+                                <path
+                                    d="m264.01,317.21c-2.72,1.11-4.31,3.05-4.81,5.88-.51,2.81.39,5.23,2.5,7.17,2.17,1.94,5.32,3.29,9.41,4.04,4.09.7,7.48.51,10.15-.58,2.67-1.09,4.28-3.05,4.79-5.88.48-2.78-.34-5.2-2.48-7.14-2.12-1.96-5.22-3.29-9.31-3.99-1.68-.29-3.2-.46-4.62-.46-2.12,0-3.99.34-5.63.97"
+                                    class="cls-1"></path>
+                                <polygon points="172.08 310.76 184.64 313.04 180.24 302.07" class="cls-1"></polygon>
+                                <path
+                                    d="m302.07,343.61l4.43-24.96,10.32,1.82-3.63,20.48,24.5,4.38-.75,4.48-34.87-6.2Zm-31.74-4.91c-7.07-1.28-12.3-3.17-15.71-5.76-4.57-3.32-6.5-7.19-5.7-11.69.82-4.58,3.97-7.55,9.38-8.96,4.09-1.31,9.65-1.31,16.75-.05,7.05,1.26,12.3,3.2,15.71,5.81,4.55,3.2,6.45,7.04,5.63,11.67-.79,4.45-3.9,7.46-9.31,8.96-2.07.65-4.52.97-7.36.97s-5.9-.29-9.38-.94m-53.01-10.14l3.61-20.53-14.89-2.71.84-4.38,40.09,7.09-.79,4.43-14.82-2.59-3.66,20.55-10.37-1.86Zm-63.91-11.33l22.11-21.86,11.65,2.03,13.11,28.15-11.21-2.01-2.29-5.66-18.31-3.27-4.26,4.53-10.8-1.91Zm-21.32,27.11l207.66,36.6,13.79-77.42s-67.14,8.21-116.25-43.02c-49.09-51.3-49.47-112.2-18.67-167.93l-40.86-7.26-45.67,259.02Z"
+                                    class="cls-1"></path>
+                                <path
+                                    d="m214.41,491.82C84.4,468.9-2.75,344.45,20.18,214.43,43.13,84.39,167.54-2.74,297.57,20.19c130.04,22.95,217.19,147.35,194.24,277.39-20.45,116-121.76,197.87-235.7,197.9-13.79,0-27.7-1.16-41.7-3.66M3.91,211.57c-24.5,138.95,68.65,271.99,207.64,296.52,139.01,24.5,272.06-68.63,296.53-207.67,2.65-14.94,3.92-29.85,3.92-44.54,0-121.81-87.52-230.12-211.54-251.93-14.99-2.64-29.86-3.95-44.59-3.95C134.02,0,25.76,87.53,3.91,211.57"
+                                    class="cls-1"></path>
+                                <path
+                                    d="m65.33,308.68c-.82-1.48-1.35-3.2-1.88-4.87l20.89-5.69,1.28,4.67c1.08,3.99-2.09,8.18-8.16,9.83-1.32.31-2.65.56-3.95.56-3.25,0-6.26-1.23-8.18-4.5m-32-8.86c.7,1.84,1.44,3.68,1.93,5.57.53,1.89.79,3.85,1.2,5.81l22.79-6.25c3.73,13.65,9.29,22.73,22.76,19.05,8.59-2.37,11.29-9.2,8.4-19.7l-5.08-18.66-52,14.19Z"
+                                    class="cls-1"></path>
+                                <path
+                                    d="m82.25,350.51l18.14-10.65c2.43,4.14,5.99,8.93.96,13.29-1.23,1.09-2.21,1.74-3.2,2.3-2.45,1.5-4.79,2.23-6.86,2.23-3.75,0-6.79-2.32-9.05-7.17m-30.63,4.31c1.13,1.65,2.31,3.22,3.34,4.89.96,1.69,1.76,3.53,2.65,5.28l21.73-12.76.29.48c-1.71,2.98-3.71,6.71-4.93,8.84l-9.48,16.39c1.3,1.96,2.7,3.87,3.9,5.91,1.25,2.11,2.21,4.24,3.27,6.37l2.65-5.08c3.92-7.77,7.68-15.64,12.03-23.21,5.03,5.52,11.72,7.33,18.38,3.44,4.6-2.74,6.47-6.54,6.23-11.6-.19-3.73-3.22-8.59-5.13-11.79l-8.45-14.43-46.49,27.28Z"
+                                    class="cls-1"></path>
+                                <path
+                                    d="m109.14,423.32c-8.88-7.82-5.22-18.98,1.49-26.68,11.6-13.27,21.92-15.18,30.17-7.99,8.88,7.79,4.74,19.66-1.93,27.26-5.73,6.54-12.99,11.21-19.9,11.21-3.47,0-6.81-1.16-9.84-3.8m-6.81-36.96c-11.74,13.39-9.65,28.78,3.39,40.23,14.49,12.64,31.93,10.63,41.99-.94,7.94-9.22,13.38-25.47-3.44-40.18-6.98-6.1-14.37-8.86-21.34-8.86-7.84,0-15.16,3.53-20.6,9.76"
+                                    class="cls-1"></path>
+                                <path
+                                    d="m167.79,409.34c-.43,1.07-1.11,1.99-1.68,2.93,3.99,1.11,8.73,2.57,13.86,4.79l-19.18,44.32c1.85.65,3.73,1.21,5.56,2.01,1.8.8,3.51,1.79,5.22,2.71l19.2-44.35c4.38,1.89,8.45,4.21,12.49,6.58.29-1.07.51-2.2.96-3.27.46-1.02,1.08-1.94,1.66-2.88l-37.13-16.07c-.31,1.11-.48,2.2-.96,3.22"
+                                    class="cls-1"></path>
+                                <path
+                                    d="m204.95,476.45l29.5,5.01c.02-1.11,0-2.32.19-3.41.17-1.09.6-2.2.94-3.24-4.84-.19-10.18-.7-18.07-1.99l3.32-19.66,8.06,1.36c3.49.63,6.62,1.45,9.41,2.32.02-1.11,0-2.32.17-3.39.22-1.11.63-2.2.96-3.29-2.91-.07-6.16-.29-9.65-.9l-8.06-1.38,2.82-16.63c7.96,1.16,13.11,2.69,17.71,4.12.07-1.11,0-2.3.22-3.39.17-1.09.58-2.23.91-3.29l-29.5-5.01-8.93,52.77Z"
+                                    class="cls-1"></path>
+                                <path
+                                    d="m279.68,425.54c-17.01,1.65-30.17,12.3-28.23,32.73,1.54,16.05,15.23,25.13,31.93,23.48,5.25-.48,10.73-2.01,15.18-4.84l1.06-6.87-1.03-.39c-3.22,3.7-8.57,6.75-13.45,7.21-12.03,1.19-19.52-7.58-20.84-20.94-1.08-11.5,2.96-24.45,15.93-25.71,5.08-.48,10.37,2.01,13.67,5.93l1.08-.12c.39-2.76.6-5.5,1.06-8.21-3.83-1.65-8.69-2.42-13.14-2.42-1.08,0-2.19,0-3.22.15"
+                                    class="cls-1"></path>
+                                <path
+                                    d="m299.91,423.97c.58.97,1.18,1.94,1.59,2.9.43,1.14.6,2.23.89,3.32,3.59-2.01,7.96-4.33,13.19-6.37l17.64,45c1.76-.9,3.49-1.84,5.34-2.54,1.83-.7,3.75-1.19,5.63-1.79l-17.66-45c4.48-1.72,8.98-2.93,13.5-4.09-.55-.94-1.2-1.89-1.61-2.98-.41-1.04-.58-2.15-.82-3.22l-37.68,14.77Z"
+                                    class="cls-1"></path>
+                                <path
+                                    d="m344.32,404.64l30.82,43.74,24.45-17.28c-.7-.8-1.64-1.6-2.24-2.52-.65-.9-1.16-1.99-1.64-2.95-3.54,3.22-7.68,6.68-14.2,11.33l-11.48-16.27,6.69-4.74c2.86-2.03,5.68-3.63,8.25-4.99-.75-.82-1.61-1.62-2.24-2.54-.6-.9-1.13-2.01-1.64-3-2.14,1.99-4.57,4.14-7.51,6.15l-6.67,4.72-9.72-13.8c6.45-4.77,11.17-7.31,15.42-9.56-.72-.85-1.61-1.67-2.26-2.57-.58-.85-1.08-1.99-1.61-2.98l-24.45,17.26Z"
+                                    class="cls-1"></path>
+                                <path
+                                    d="m387.47 375.1 4.76-6.05c6.88-8.67 15.79-10.55 27.34-1.38 14.44 11.38 13.6 21.23 6.86 29.73l-4.14 5.23-34.82-27.52zm5.78-14.67-16.68 21.11 41.97 33.16 13.67-17.26c9.99-12.64 9.46-28.95-4.45-39.99-4.91-3.87-10.66-6.29-16.46-6.29-6.16 0-12.42 2.71-18.05 9.27"
+                                    class="cls-1"></path>
+                                <path
+                                    d="m348.43,97.43c-7.29-1.28-11.29-8.18-9.19-20.14,2.09-11.96,8.18-17.07,15.5-15.78,7.22,1.31,11.21,8.21,9.12,20.14-2.09,11.96-8.18,17.07-15.42,15.78m-1.03,5.96c10.83,1.91,20.43-5.33,23.1-20.55,2.67-15.23-3.9-25.32-14.73-27.26-10.88-1.91-20.5,5.33-23.17,20.53-2.65,15.23,3.92,25.35,14.8,27.28m-38.77-36.41l-5.17-.92,3.51-12.59,20.62,3.66,1.03-5.81-26.2-4.65-6.74,23.99,10.54,1.89c10.76,1.89,13.5,5.76,12.56,11.04-.89,5.06-5.44,7.63-12.46,6.39-5.65-1.02-10.47-3.99-13.07-7.48l-3.97,4.72c3.37,4.24,9.48,7.53,16.05,8.69,11.89,2.11,18.72-3.34,20.14-11.43,1.44-8.28-2.98-15.03-16.84-17.5m-39.32-2.49c-6.5-1.16-9.91-5.42-8.98-10.89.99-5.54,5.78-8.35,11.81-7.26,7.24,1.28,10.35,6.17,9.5,10.97-.89,5.16-5.97,8.33-12.34,7.19m3.54-23.6c-9.24-1.65-17.4,2.81-18.99,11.84-1.52,8.62,4.16,15.32,13.38,16.97,5.78,1.02,11.04-.17,14.49-3.78l-.29,1.67c-2.05,11.69-9.07,16.56-18.48,14.89-3.39-.58-6.4-1.74-8.59-3.78l-3.42,4.74c2.65,2.4,6.67,4.02,11.04,4.79,13.02,2.3,23.46-4.65,26.28-20.6,2.6-14.89-2.96-24.55-15.42-26.75m-42.37-6.97l-1.01,5.81,10.49,1.86-7.17,40.91,6.57,1.16,8.18-46.72-17.06-3.03Zm-24.54-4.36l-1.01,5.81,10.47,1.86-7.17,40.91,6.57,1.16,8.21-46.72-17.06-3.03Z"
+                                    class="cls-1"></path>
+                            </svg>
+
+                            <img src="visa cloud.webp" alt="Mastercard" class="h-8" style="height: 40px;">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </footer>
+
+    <script>
+        class DestinologyHotelPage {
+            constructor() {
+                this.currentDate = new Date();
+                this.selectedDate = new Date(2025, 10, 30); // November 30, 2025
+                this.currentMonth = new Date(2025, 10, 1); // November 2025
+                this.pricePerPerson = true;
+                this.currentNights = 5;
+                this.airlines = [
+                    { id: 'aerlingus', name: 'Aer Lingus', logoUrl: 'https://cdn.freebiesupply.com/logos/large/2x/aer-lingus-01-logo-png-transparent.png' },
+                    { id: 'airindia', name: 'Air India', logoUrl: 'https://logos-world.net/wp-content/uploads/2023/02/Air-India-Logo.png' },
+                    { id: 'ajet', name: 'AJet', logoUrl: 'https://assets.planespotters.net/files/airlines/7/ajet-turkiye_a6f9cc_opr.png' },
+                    { id: 'ba', name: 'British Airways', logoUrl: 'https://logos-marcas.com/wp-content/uploads/2021/02/British-Airways-Simbolo.png' },
+                    { id: 'egyptair', name: 'Egyptair', logoUrl: 'https://logodownload.org/wp-content/uploads/2020/03/egyptair-logo-1.png' },
+                    { id: 'emirates', name: 'Emirates', logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Emirates_logo.svg/128px-Emirates_logo.svg.png' },
+                    { id: 'ethiopian', name: 'Ethiopian', logoUrl: 'https://www.childjusticeinafrica.info/images/ET-vertical-logo-160-x-150-01-Resized-for-CJ-2.PNG' },
+                    { id: 'gulfair', name: 'Gulf Air', logoUrl: 'https://logores.yrucd.com/wp-content/uploads/2023/03/Gulf_Air_logo_PNG3.png!a' },
+                    { id: 'lufthansa', name: 'Lufthansa', logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Lufthansa_Logo_2018.svg/128px-Lufthansa_Logo_2018.svg.png' },
+                    { id: 'pegasus', name: 'Pegasus', logoUrl: 'https://i.pinimg.com/originals/3c/6c/ac/3c6cac0a8480708ad226ab1eb6e27d35.jpg' },
+                    { id: 'qatar', name: 'Qatar', logoUrl: 'https://upload.wikimedia.org/wikipedia/en/thumb/9/9b/Qatar_Airways_Logo.svg/128px-Qatar_Airways_Logo.svg.png' },
+                    { id: 'saudia', name: 'Saudia', logoUrl: 'https://logos-world.net/wp-content/uploads/2023/01/Saudi-Arabian-Airlines-Logo.png' },
+                    { id: 'swiss', name: 'Swiss', logoUrl: 'https://download.logo.wine/logo/Swiss_International_Air_Lines/Swiss_International_Air_Lines-Logo.wine.png' },
+                    { id: 'turkish', name: 'Turkish Airlines', logoUrl: 'https://logos-world.net/wp-content/uploads/2020/03/Turkish-Airlines-Logo.png' },
+                    { id: 'virgin', name: 'Virgin Atlantic', logoUrl: 'https://logos-world.net/wp-content/uploads/2023/01/Virgin-Atlantic-Logo.jpg' }
+                ];
+                this.flightData = this.generateFlightData();
+                this.calendarData = this.generateCalendarData();
+                this.init();
+            }
+
+            init() {
+                this.setupEventListeners();
+                this.renderAirlineFilter();
+                this.renderCalendar();
+                this.renderFlightResults();
+                this.updatePriceDisplay();
+                this.startAnimations();
+            }
+
+            setupEventListeners() {
+                document.getElementById('heartButton').addEventListener('click', this.handleHeartClick.bind(this));
+                document.getElementById('prevMonth').addEventListener('click', this.previousMonth.bind(this));
+                document.getElementById('nextMonth').addEventListener('click', this.nextMonth.bind(this));
+                document.getElementById('priceToggle').addEventListener('click', this.togglePrice.bind(this));
+                document.getElementById('airportSelect').addEventListener('change', this.updateSearch.bind(this));
+                document.getElementById('durationSelect').addEventListener('change', this.updateDuration.bind(this));
+                document.getElementById('boardSelect').addEventListener('change', this.updateSearch.bind(this));
+                document.getElementById('roomsSelect').addEventListener('change', this.updateSearch.bind(this));
+                document.getElementById('flightTimeSelect').addEventListener('change', this.updateSearch.bind(this));
+                document.querySelectorAll('.duration-tab').forEach(tab => tab.addEventListener('click', this.selectDurationTab.bind(this)));
+                document.querySelectorAll('.filter-header').forEach(header => header.addEventListener('click', this.toggleFilter.bind(this)));
+                document.querySelectorAll('.filter-option input:not(.airline-checkbox)').forEach(input => input.addEventListener('change', this.applyFilters.bind(this)));
+                const durationSlider = document.getElementById('durationSlider');
+                if (durationSlider) {
+                    durationSlider.addEventListener('input', this.updateDurationSlider.bind(this));
+                    durationSlider.addEventListener('change', this.applyFilters.bind(this));
+                }
+                document.getElementById('redeye-hide').addEventListener('change', this.applyFilters.bind(this));
+                document.getElementById('updateSearch').addEventListener('click', this.performSearch.bind(this));
+                document.getElementById('selectHoliday').addEventListener('click', this.selectHoliday.bind(this));
+                document.getElementById('alternativeFlights').addEventListener('click', this.showAlternativeFlights.bind(this));
+            }
+
+            handleHeartClick(e) {
+                const button = e.currentTarget;
+                const icon = button.querySelector('.heart-icon');
+                button.classList.toggle('liked');
+                icon.className = button.classList.contains('liked') ? 'fas fa-heart heart-icon' : 'far fa-heart heart-icon';
+            }
+
+            generateCalendarData() {
+                const data = {};
+                const basePrice = 1459;
+                for (let day = 1; day <= 30; day++) {
+                    const variation = Math.floor(Math.random() * 600) - 300;
+                    data[day] = { price: basePrice + variation, available: Math.random() > 0.1, cheapest: day === 30 };
+                }
+                return data;
+            }
+
+            renderCalendar() {
+                const container = document.getElementById('calendarDays');
+                container.innerHTML = '';
+                const year = this.currentMonth.getFullYear();
+                const month = this.currentMonth.getMonth();
+                const firstDayOfMonth = new Date(year, month, 1);
+                const startDate = new Date(firstDayOfMonth);
+                startDate.setDate(startDate.getDate() - (firstDayOfMonth.getDay() === 0 ? 6 : firstDayOfMonth.getDay() - 1));
+                const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+                document.getElementById('currentMonth').textContent = `${monthNames[month]} ${year}`;
+
+                for (let i = 0; i < 42; i++) {
+                    const currentDate = new Date(startDate);
+                    currentDate.setDate(startDate.getDate() + i);
+                    const dayElement = document.createElement('div');
+                    dayElement.className = 'calendar-day';
+                    const dayNumber = currentDate.getDate();
+                    const isCurrentMonth = currentDate.getMonth() === month;
+                    const isSelected = this.selectedDate && currentDate.toDateString() === this.selectedDate.toDateString();
+
+                    if (!isCurrentMonth) dayElement.classList.add('outside-month');
+                    if (isSelected) dayElement.classList.add('selected');
+
+                    if (isCurrentMonth && this.calendarData[dayNumber]) {
+                        const dayData = this.calendarData[dayNumber];
+                        if (!dayData.available) dayElement.classList.add('unavailable');
+                        if (dayData.cheapest) dayElement.classList.add('cheapest');
+                        const priceToShow = this.pricePerPerson ? dayData.price : dayData.price * 2;
+                        dayElement.innerHTML = `<span>${dayNumber}</span><span class="calendar-price">£${priceToShow.toLocaleString()}</span>`;
+                        if (dayData.available) {
+                            dayElement.addEventListener('click', () => this.selectDate(currentDate, dayData.price));
+                        }
+                    } else {
+                        dayElement.innerHTML = `<span>${dayNumber}</span>`;
+                    }
+                    container.appendChild(dayElement);
+                }
+            }
+
+            selectDate(date, price) {
+                this.selectedDate = date;
+                this.updateSelectedDateDisplay();
+                this.updatePriceDisplay(price);
+                this.renderCalendar();
+                document.querySelectorAll('.price-display').forEach(el => {
+                    el.classList.add('updating');
+                    setTimeout(() => el.classList.remove('updating'), 500);
+                });
+            }
+
+            updateSelectedDateDisplay() {
+                const options = { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' };
+                const formattedDate = this.selectedDate.toLocaleDateString('en-GB', options);
+                document.getElementById('selectedDateDisplay').textContent = formattedDate;
+                document.getElementById('offerDate').textContent = formattedDate;
+                document.getElementById('outboundDate').textContent = formattedDate;
+                const returnDate = this.addDays(this.selectedDate, this.currentNights);
+                document.getElementById('returnDate').textContent = returnDate.toLocaleDateString('en-GB', options);
+            }
+
+            previousMonth() { this.currentMonth.setMonth(this.currentMonth.getMonth() - 1); this.renderCalendar(); }
+            nextMonth() { this.currentMonth.setMonth(this.currentMonth.getMonth() + 1); this.renderCalendar(); }
+
+            togglePrice() {
+                const toggle = document.getElementById('priceToggle');
+                toggle.classList.toggle('active');
+                this.pricePerPerson = !toggle.classList.contains('active');
+                this.updatePriceDisplay();
+                this.renderCalendar();
+            }
+
+            updatePriceDisplay(newPrice = null) {
+                const basePrice = newPrice || 1459;
+                const mainPriceEl = document.getElementById('mainPrice');
+                const totalPriceEl = document.getElementById('totalPrice');
+                mainPriceEl.textContent = this.pricePerPerson ? `£${basePrice.toLocaleString()}` : `£${(basePrice * 2).toLocaleString()}`;
+                totalPriceEl.textContent = `£${(basePrice * 2).toLocaleString()}`;
+            }
+
+            selectDurationTab(e) {
+                const tab = e.currentTarget;
+                document.querySelectorAll('.duration-tab').forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                this.currentNights = parseInt(tab.dataset.nights);
+                document.getElementById('offerNights').textContent = `${this.currentNights} nights`;
+                document.getElementById('durationSelect').value = this.currentNights;
+                this.updateSelectedDateDisplay();
+                this.applyFilters();
+            }
+
+            updateDuration() {
+                this.currentNights = parseInt(document.getElementById('durationSelect').value);
+                document.querySelectorAll('.duration-tab').forEach(tab => {
+                    tab.classList.toggle('active', parseInt(tab.dataset.nights) === this.currentNights);
+                });
+                document.getElementById('offerNights').textContent = `${this.currentNights} nights`;
+                this.updateSelectedDateDisplay();
+            }
+
+            toggleFilter(e) {
+                const header = e.currentTarget;
+                const content = header.nextElementSibling;
+                const icon = header.querySelector('i');
+                content.classList.toggle('hidden');
+                icon.classList.toggle('fa-chevron-up');
+                icon.classList.toggle('fa-chevron-down');
+            }
+
+            renderAirlineFilter() {
+                const grid = document.getElementById('airline-filter-grid');
+                grid.innerHTML = ''; // Clear existing
+                this.airlines.forEach(airline => {
+                    const logoOption = document.createElement('div');
+                    logoOption.innerHTML = `
+                        <label for="airline-${airline.id}" class="airline-logo-label" title="${airline.name}">
+                            <input type="checkbox" id="airline-${airline.id}" class="hidden airline-checkbox">
+                            <div class="airline-filter-logo">
+                                <img src="${airline.logoUrl}" alt="${airline.name} Logo">
+                            </div>
+                        </label>
+                    `;
+                    grid.appendChild(logoOption);
+                });
+                // Add event listener to the newly created checkboxes
+                document.querySelectorAll('.airline-checkbox').forEach(input => input.addEventListener('change', this.applyFilters.bind(this)));
+            }
+
+            applyFilters() {
+                const activeFilters = this.getActiveFilters();
+                const resultsContainer = document.getElementById('flightResults');
+                resultsContainer.classList.add('loading');
+                setTimeout(() => {
+                    const filteredFlights = this.filterFlights(activeFilters);
+                    this.renderFlightResults(filteredFlights);
+                    resultsContainer.classList.remove('loading');
+                }, 500);
+            }
+
+            getActiveFilters() {
+                const filters = { stops: [], airports: [], airlines: [] };
+                document.querySelectorAll('input[id^="stops-"]:checked').forEach(el => {
+                    if (el.id !== 'stops-any') filters.stops.push(el.id.replace('stops-', ''));
+                });
+                document.querySelectorAll('input[id^="dept-"]:checked').forEach(el => {
+                    if (el.id !== 'dept-any') filters.airports.push(document.querySelector(`label[for='${el.id}']`).textContent);
+                });
+                document.querySelectorAll('.airline-checkbox:checked').forEach(el => {
+                    filters.airlines.push(el.id.replace('airline-', ''));
+                });
+                filters.maxDuration = parseFloat(document.getElementById('durationSlider').value);
+                filters.hideRedEye = document.getElementById('redeye-hide').checked;
+                return filters;
+            }
+
+            filterFlights(filters) {
+                return this.flightData.filter(itinerary => {
+                    const outbound = itinerary.outbound;
+                    if (filters.stops.length > 0) {
+                        const stopType = outbound.stops === 0 ? 'direct' : `${outbound.stops}stop`;
+                        if (!filters.stops.includes(stopType)) return false;
+                    }
+                    if (filters.airports.length > 0 && !filters.airports.includes(outbound.departureAirport.split(' (')[0].trim())) {
+                        return false;
+                    }
+                    if (filters.airlines.length > 0 && !filters.airlines.includes(outbound.airlineId)) {
+                        return false;
+                    }
+                    if (outbound.duration > filters.maxDuration) return false;
+                    if (filters.hideRedEye) {
+                        const departureHour = parseInt(outbound.departureTime.split(':')[0]);
+                        if (departureHour >= 22 || departureHour < 5) return false;
+                    }
+                    return true;
+                });
+            }
+
+            updateDurationSlider() {
+                const slider = document.getElementById('durationSlider');
+                document.getElementById('durationValue').textContent = `${slider.value} hours`;
+            }
+
+            generateFlightData() {
+                const airports = ['London Stansted', 'London Gatwick', 'Manchester', 'Birmingham', 'Edinburgh', 'Belfast City', 'Aberdeen', 'Cardiff'];
+                const airportCodes = ['STN', 'LGW', 'MAN', 'BHX', 'EDI', 'BHD', 'ABZ', 'CWL'];
+                const itineraries = [];
+
+                const createFlightLeg = (isOutbound, departureAirport, departureCode) => {
+                    const airline = this.airlines[Math.floor(Math.random() * this.airlines.length)];
+                    const duration = 8 + Math.random() * 5;
+                    return {
+                        airlineId: airline.id,
+                        airlineName: airline.name,
+                        logoUrl: airline.logoUrl,
+                        departureAirport: isOutbound ? `${departureAirport} (${departureCode})` : 'Dubai (DXB)',
+                        arrivalAirport: isOutbound ? 'Dubai (DXB)' : `${departureAirport} (${departureCode})`,
+                        departureTime: this.generateRandomTime(),
+                        arrivalTime: this.generateRandomTime(),
+                        duration: Math.round(duration * 2) / 2,
+                        stops: Math.random() > 0.4 ? 1 : 0,
+                    };
+                };
+
+                for (let i = 0; i < 40; i++) {
+                    const airportIndex = Math.floor(Math.random() * airports.length);
+                    const outbound = createFlightLeg(true, airports[airportIndex], airportCodes[airportIndex]);
+                    const inbound = createFlightLeg(false, airports[airportIndex], airportCodes[airportIndex]);
+                    inbound.airlineId = outbound.airlineId;
+                    inbound.airlineName = outbound.airlineName;
+                    inbound.logoUrl = outbound.logoUrl;
+                    itineraries.push({ id: i, price: 1380 + Math.floor(Math.random() * 500), outbound, inbound });
+                }
+                return itineraries.sort((a, b) => a.price - b.price);
+            }
+
+            generateRandomTime() {
+                const hours = Math.floor(Math.random() * 24);
+                const minutes = Math.floor(Math.random() * 12) * 5;
+                return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
+            }
+
+            renderFlightResults(itineraries = null) {
+                const container = document.getElementById('flightResults');
+                const paginationContainer = document.getElementById('pagination-container');
+                container.innerHTML = '';
+                paginationContainer.innerHTML = '';
+
+                const flightsToRender = itineraries || this.flightData;
+
+                if (flightsToRender.length === 0) {
+                    container.innerHTML = `<div class="text-center p-8 bg-almond-75 rounded-lg"><i class="fas fa-plane-slash text-4xl text-marine mb-4"></i><h4 class="font-bold text-marine">No flights found</h4><p class="text-sm text-gray-600">Try adjusting your filters for more results.</p></div>`;
+                    return;
+                }
+
+                flightsToRender.slice(0, 8).forEach((itinerary) => {
+                    const flightCard = document.createElement('div');
+                    flightCard.className = `flight-card animate-fade-in-up`;
+                    flightCard.style.opacity = '0'; // For animation
+                    const outStopText = itinerary.outbound.stops === 0 ? 'Direct' : '1 stop';
+                    const inStopText = itinerary.inbound.stops === 0 ? 'Direct' : '1 stop';
+                    const outboundDate = this.formatDate(this.selectedDate);
+                    const inboundDate = this.formatDate(this.addDays(this.selectedDate, this.currentNights));
+                    flightCard.innerHTML = `
+                        <div class="grid grid-cols-[1fr_auto] gap-x-6">
+                            <div class="space-y-4">
+                                <div class="flight-leg"><div class="flex justify-between items-center mb-3"><div class="flex items-center text-sm font-semibold text-gray-800"><i class="fas fa-plane-departure mr-2 text-marine"></i><span>${outboundDate} · Outbound</span></div></div><div class="flex items-center justify-between"><div class="text-left w-2/5"><div class="flight-time">${itinerary.outbound.departureTime}</div><div class="flight-airport truncate">${itinerary.outbound.departureAirport}</div></div><div class="flight-path-container"><div class="flight-path-line"></div><i class="fas fa-plane flight-path-icon"></i><div class="text-center absolute w-full top-full text-xs text-gray-500 mt-1">${itinerary.outbound.duration}h · ${outStopText}</div></div><div class="text-right w-2/5"><div class="flight-time">${itinerary.outbound.arrivalTime}</div><div class="flight-airport">Dubai (DXB)</div></div></div></div>
+                                <div class="border-t border-dashed"></div>
+                                <div class="flight-leg pt-4"><div class="flex items-center text-sm font-semibold text-gray-800 mb-3"><i class="fas fa-plane-arrival mr-2 text-marine"></i><span>${inboundDate} · Inbound</span></div><div class="flex items-center justify-between"><div class="text-left w-2/5"><div class="flight-time">${itinerary.inbound.departureTime}</div><div class="flight-airport">Dubai (DXB)</div></div><div class="flight-path-container"><div class="flight-path-line"></div><i class="fas fa-plane flight-path-icon" style="transform: translate(-50%, -50%) rotate(180deg);"></i><div class="text-center absolute w-full top-full text-xs text-gray-500 mt-1">${itinerary.inbound.duration}h · ${inStopText}</div></div><div class="text-right w-2/5"><div class="flight-time">${itinerary.inbound.arrivalTime}</div><div class="flight-airport truncate">${itinerary.inbound.arrivalAirport}</div></div></div></div>
+                            </div>
+                            <div class="text-center flex-col items-center justify-center space-y-2 border-l border-gray-200 pl-6 w-[150px] hidden md:flex"><div class="airline-logo h-12 w-24"><img src="${itinerary.outbound.logoUrl}" alt="${itinerary.outbound.airlineName} Logo"></div><div class="text-2xl font-bold text-marine">£${itinerary.price.toLocaleString()}</div><div class="text-xs text-gray-500 mb-2">per person</div><button class="btn-primary mt-2 text-sm px-4 py-2" style="width: auto; border-radius: 8px;" onclick="destinologyApp.selectFlight(${itinerary.id})">Flights + Hotel</button></div>
+                        </div>`;
+                    container.appendChild(flightCard);
+                });
+                this.renderPagination();
+            }
+
+            renderPagination() {
+                const container = document.getElementById('pagination-container');
+                container.innerHTML = '';
+                const pagination = document.createElement('div');
+                pagination.className = 'pagination';
+                pagination.innerHTML = `
+                    <button class="pagination-btn"><i class="fas fa-chevron-left"></i></button>
+                    <button class="pagination-btn active">1</button><button class="pagination-btn">2</button><button class="pagination-btn">3</button><button class="pagination-btn">4</button>
+                    <span class="flex items-center justify-center h-10 w-10 text-gray-500">...</span>
+                    <button class="pagination-btn">27</button>
+                    <button class="pagination-btn"><i class="fas fa-chevron-right"></i></button>`;
+                container.appendChild(pagination);
+            }
+
+            updateSearch() { document.getElementById('offerBoard').textContent = this.getBoardText(document.getElementById('boardSelect').value); this.performSearch(); }
+            getBoardText(boardCode) { return { 'any': 'Room only', 'bb': 'Breakfast included', 'hb': 'Half board', 'fb': 'Full board' }[boardCode] || 'Breakfast included'; }
+
+            performSearch() {
+                document.getElementById('flightResults').classList.add('loading');
+                setTimeout(() => { this.applyFilters(); this.updatePriceDisplay(); this.showSearchComplete(); }, 1000);
+            }
+
+            showSearchComplete() {
+                const notification = document.createElement('div');
+                notification.className = 'fixed top-24 right-4 bg-marine text-white px-6 py-3 rounded-lg shadow-lg z-50 animate-fade-in-right';
+                notification.innerHTML = '<i class="fas fa-check mr-2"></i>Search updated!';
+                document.body.appendChild(notification);
+                setTimeout(() => {
+                    notification.style.animation = 'fadeInRight 0.5s ease-out reverse';
+                    setTimeout(() => notification.remove(), 500);
+                }, 2000);
+            }
+
+            selectFlight(itineraryId) {
+                const itinerary = this.flightData.find(f => f.id === itineraryId);
+                if (itinerary) { this.updateMainOffer(itinerary); window.scrollTo({ top: 0, behavior: 'smooth' }); this.showFlightSelected(itinerary); }
+            }
+
+            updateMainOffer(itinerary) {
+                document.getElementById('outboundLogo').innerHTML = `<img src="${itinerary.outbound.logoUrl}" alt="${itinerary.outbound.airlineName} Logo">`;
+                document.getElementById('returnLogo').innerHTML = `<img src="${itinerary.inbound.logoUrl}" alt="${itinerary.inbound.airlineName} Logo">`;
+                this.updatePriceDisplay(itinerary.price);
+            }
+
+            showFlightSelected(itinerary) {
+                const notification = document.createElement('div');
+                notification.className = 'fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg shadow-2xl z-50 p-6 animate-scale-in';
+                notification.innerHTML = `<div class="text-center"><div class="airline-logo h-16 w-32 mx-auto mb-4"><img src="${itinerary.outbound.logoUrl}" alt="${itinerary.outbound.airlineName} Logo"></div><h3 class="text-lg font-bold text-marine mb-2">Flight Selected!</h3><p class="text-gray-600 body-font">${itinerary.outbound.airlineName} - £${itinerary.price}</p><button class="btn-primary mt-4 px-6" onclick="this.parentElement.parentElement.remove()">Continue</button></div>`;
+                document.body.appendChild(notification);
+                setTimeout(() => { if (notification.parentElement) notification.remove() }, 3000);
+            }
+
+            selectHoliday() {
+                const modal = document.createElement('div');
+                modal.className = 'fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center';
+                modal.innerHTML = `<div class="bg-white rounded-lg p-8 max-w-md mx-4 animate-scale-in"><div class="text-center"><div class="text-6xl mb-4">🎉</div><h3 class="text-2xl font-bold text-marine mb-4">Booking Confirmed!</h3><p class="text-gray-600 mb-6 body-font">Your holiday to Jumeirah Beach Hotel has been reserved.</p><div class="space-y-3"><button class="btn-primary w-full" onclick="this.closest('.fixed').remove()">View Booking Details</button><button class="btn-secondary w-full" onclick="this.closest('.fixed').remove()">Continue Shopping</button></div></div></div>`;
+                document.body.appendChild(modal);
+            }
+
+            showAlternativeFlights() {
+                const container = document.querySelector('.alt-flights-container');
+                container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                container.style.boxShadow = '0 0 0 3px rgba(21, 59, 60, 0.3)';
+                setTimeout(() => { container.style.boxShadow = ''; }, 2000);
+            }
+
+            startAnimations() {
+                // The initial animations are handled entirely by the CSS classes
+                // already present in the HTML, restoring the smooth, non-flickering effect.
+            }
+
+            formatDate(date) { const options = { weekday: 'short', day: 'numeric', month: 'short' }; return date.toLocaleDateString('en-GB', options).replace(/,/g, ''); }
+            addDays(date, days) { const result = new Date(date); result.setDate(result.getDate() + days); return result; }
+        }
+
+        let destinologyApp;
+        document.addEventListener('DOMContentLoaded', () => {
+            destinologyApp = new DestinologyHotelPage();
+        });
+    </script>
+</body>
+
+</html>
