@@ -38,7 +38,8 @@
         * {
             box-sizing: border-box;
         }
-        html{
+
+        html {
             overflow-x: hidden;
         }
 
@@ -930,6 +931,14 @@
             /* End position */
         }
 
+        .flight-path-icon.inbound-icon {
+            left: 85%;
+        }
+
+        .flight-card:hover .flight-path-icon.inbound-icon {
+            left: 15%;
+        }
+
         .airline-logo {
             display: flex;
             align-items: center;
@@ -1203,7 +1212,7 @@
             </div>
         </div>
     </div>
-    
+
     <style>
         /* Full Screen Image Modal Styles */
         .image-modal {
@@ -1217,7 +1226,7 @@
             background-color: rgba(0, 0, 0, 0.95);
             animation: fadeIn 0.3s ease;
         }
-    
+
         .close-btn {
             position: absolute;
             top: 20px;
@@ -1239,14 +1248,14 @@
             user-select: none;
             backdrop-filter: blur(10px);
         }
-    
+
         .close-btn:hover {
             background: rgba(255, 255, 255, 0.2);
             border-color: rgba(255, 255, 255, 0.6);
             transform: rotate(90deg) scale(1.1);
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
         }
-    
+
         .modal-content-wrapper {
             position: relative;
             width: 100%;
@@ -1255,7 +1264,7 @@
             align-items: center;
             justify-content: center;
         }
-    
+
         .modal-img {
             max-width: 95%;
             max-height: 95%;
@@ -1263,7 +1272,7 @@
             border-radius: 8px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
         }
-    
+
         .image-nav {
             position: absolute;
             top: 50%;
@@ -1274,7 +1283,7 @@
             padding: 0 20px;
             pointer-events: none;
         }
-    
+
         .nav-btn {
             background: rgba(0, 0, 0, 0.5);
             color: white;
@@ -1287,12 +1296,12 @@
             pointer-events: all;
             user-select: none;
         }
-    
+
         .nav-btn:hover {
             background: rgba(0, 0, 0, 0.8);
             transform: scale(1.1);
         }
-    
+
         .image-counter {
             position: absolute;
             bottom: 30px;
@@ -1305,17 +1314,17 @@
             border-radius: 20px;
             user-select: none;
         }
-    
+
         @keyframes fadeIn {
             from {
                 opacity: 0;
             }
-    
+
             to {
                 opacity: 1;
             }
         }
-    
+
         /* Mobile Responsive */
         @media (max-width: 768px) {
             .close-btn {
@@ -1323,19 +1332,19 @@
                 right: 15px;
                 font-size: 30px;
             }
-    
+
             .nav-btn {
                 font-size: 20px;
                 padding: 10px 15px;
             }
-    
+
             .image-counter {
                 bottom: 20px;
                 font-size: 14px;
             }
         }
     </style>
-    
+
     <script>
         // JavaScript for Full Screen Image Modal
         document.addEventListener('DOMContentLoaded', function () {
@@ -1610,8 +1619,12 @@
                             <div class="dropdown-grid inspiration">
                                 <div class="dropdown-column">
                                     <ul class="dropdown-links">
-                                        <li><a href="#"><center>Blog</center></a></li>
-                                        <li><a href="#"><center>Friends of Destinology</center></a></li>
+                                        <li><a href="#">
+                                                <center>Blog</center>
+                                            </a></li>
+                                        <li><a href="#">
+                                                <center>Friends of Destinology</center>
+                                            </a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -1658,16 +1671,15 @@
                 <!-- Hotel Image and Info -->
                 <div class="mb-6">
                     <div class="relative mb-4">
-                        <img src="jumeirah.jpg"
-                            alt="Jumeirah Beach Hotel" class="w-full h-52 rounded-lg object-cover">
+                        <img src="jumeirah.jpg" alt="Jumeirah Beach Hotel" class="w-full h-52 rounded-lg object-cover">
                         <button class="heart-button" id="heartButton">
                             <i class="far fa-heart heart-icon"></i>
                         </button>
                         <button id="viewPhotosBtn"
                             class="absolute bottom-3 left-3 bg-white px-3 py-1 rounded-lg text-sm font-semibold body-font shadow-lg hover:bg-gray-50 transition-colors cursor-pointer">
-                            <i class="fas fa-camera mr-1"></i> View Photos               </button>
+                            <i class="fas fa-camera mr-1"></i> View Photos </button>
                     </div>
-                    
+
 
                     <!-- --- CHANGE 3: DIAMONDS REPLACED STARS --- -->
                     <div class="star-rating mb-3">
@@ -1867,17 +1879,18 @@
                         <div class="text-small space-y-2">
                             <div class="flex items-center">
                                 <i class="fas fa-plane-departure text-marine mr-3 w-4"></i>
-                                <span class="flight-time">12:35</span>
-                                <span class="flight-airport ml-2">London Stansted (STN)</span>
+                                <span class="flight-time" id="offerOutboundDepTime">12:35</span>
+                                <span class="flight-airport ml-2" id="offerOutboundDepAirport">London Stansted
+                                    (STN)</span>
                             </div>
                             <div class="flex items-center">
                                 <i class="fas fa-clock text-gray-400 mr-3 w-4"></i>
-                                <span class="flight-duration">11h 15m • 1 stop</span>
+                                <span class="flight-duration" id="offerOutboundDuration">11h 15m • 1 stop</span>
                             </div>
                             <div class="flex items-center">
                                 <i class="fas fa-plane-arrival text-marine mr-3 w-4"></i>
-                                <span class="flight-time">03:50+1</span>
-                                <span class="flight-airport ml-2">Dubai (DXB)</span>
+                                <span class="flight-time" id="offerOutboundArrTime">03:50+1</span>
+                                <span class="flight-airport ml-2" id="offerOutboundArrAirport">Dubai (DXB)</span>
                             </div>
                         </div>
                     </div>
@@ -1896,17 +1909,18 @@
                         <div class="text-small space-y-2">
                             <div class="flex items-center">
                                 <i class="fas fa-plane-departure text-marine mr-3 w-4"></i>
-                                <span class="flight-time">06:00</span>
-                                <span class="flight-airport ml-2">Dubai (DXB)</span>
+                                <span class="flight-time" id="offerInboundDepTime">06:00</span>
+                                <span class="flight-airport ml-2" id="offerInboundDepAirport">Dubai (DXB)</span>
                             </div>
                             <div class="flex items-center">
                                 <i class="fas fa-clock text-gray-400 mr-3 w-4"></i>
-                                <span class="flight-duration">12h 35m • 1 stop</span>
+                                <span class="flight-duration" id="offerInboundDuration">12h 35m • 1 stop</span>
                             </div>
                             <div class="flex items-center">
                                 <i class="fas fa-plane-arrival text-marine mr-3 w-4"></i>
-                                <span class="flight-time">14:35</span>
-                                <span class="flight-airport ml-2">London Stansted (STN)</span>
+                                <span class="flight-time" id="offerInboundArrTime">14:35</span>
+                                <span class="flight-airport ml-2" id="offerInboundArrAirport">London Stansted
+                                    (STN)</span>
                             </div>
                         </div>
                     </div>
@@ -2473,7 +2487,8 @@
                 font-weight: 400;
                 margin-bottom: 20px;
                 color: #fff;
-                font-family:'The Seasons', serif;;
+                font-family: 'The Seasons', serif;
+                ;
                 ;
             }
 
@@ -2653,11 +2668,11 @@
                     filter: invert(1);
                 }
 
-                .logo{
+                .logo {
                     margin-left: 70px;
                 }
-                
-                .dot-digital-iframe{
+
+                .dot-digital-iframe {
                     margin-left: 20px;
                 }
 
@@ -3087,13 +3102,13 @@
                 this.airlines.forEach(airline => {
                     const logoOption = document.createElement('div');
                     logoOption.innerHTML = `
-                        <label for="airline-${airline.id}" class="airline-logo-label" title="${airline.name}">
-                            <input type="checkbox" id="airline-${airline.id}" class="hidden airline-checkbox">
-                            <div class="airline-filter-logo">
-                                <img src="${airline.logoUrl}" alt="${airline.name} Logo">
-                            </div>
-                        </label>
-                    `;
+                            <label for="airline-${airline.id}" class="airline-logo-label" title="${airline.name}">
+                                <input type="checkbox" id="airline-${airline.id}" class="hidden airline-checkbox">
+                                <div class="airline-filter-logo">
+                                    <img src="${airline.logoUrl}" alt="${airline.name} Logo">
+                                </div>
+                            </label>
+                        `;
                     grid.appendChild(logoOption);
                 });
                 // Add event listener to the newly created checkboxes
@@ -3214,15 +3229,44 @@
                     const inStopText = itinerary.inbound.stops === 0 ? 'Direct' : '1 stop';
                     const outboundDate = this.formatDate(this.selectedDate);
                     const inboundDate = this.formatDate(this.addDays(this.selectedDate, this.currentNights));
+
+                    // THIS TEMPLATE IS NOW FULLY DYNAMIC AND CORRECT
                     flightCard.innerHTML = `
-                        <div class="grid grid-cols-[1fr_auto] gap-x-6">
-                            <div class="space-y-4">
-                                <div class="flight-leg"><div class="flex justify-between items-center mb-3"><div class="flex items-center text-sm font-semibold text-gray-800"><i class="fas fa-plane-departure mr-2 text-marine"></i><span>${outboundDate} · Outbound</span></div></div><div class="flex items-center justify-between"><div class="text-left w-2/5"><div class="flight-time">${itinerary.outbound.departureTime}</div><div class="flight-airport truncate">${itinerary.outbound.departureAirport}</div></div><div class="flight-path-container"><div class="flight-path-line"></div><i class="fas fa-plane flight-path-icon"></i><div class="text-center absolute w-full top-full text-xs text-gray-500 mt-1">${itinerary.outbound.duration}h · ${outStopText}</div></div><div class="text-right w-2/5"><div class="flight-time">${itinerary.outbound.arrivalTime}</div><div class="flight-airport">Dubai (DXB)</div></div></div></div>
-                                <div class="border-t border-dashed"></div>
-                                <div class="flight-leg pt-4"><div class="flex items-center text-sm font-semibold text-gray-800 mb-3"><i class="fas fa-plane-arrival mr-2 text-marine"></i><span>${inboundDate} · Inbound</span></div><div class="flex items-center justify-between"><div class="text-left w-2/5"><div class="flight-time">${itinerary.inbound.departureTime}</div><div class="flight-airport">Dubai (DXB)</div></div><div class="flight-path-container"><div class="flight-path-line"></div><i class="fas fa-plane flight-path-icon" style="transform: translate(-50%, -50%) rotate(180deg);"></i><div class="text-center absolute w-full top-full text-xs text-gray-500 mt-1">${itinerary.inbound.duration}h · ${inStopText}</div></div><div class="text-right w-2/5"><div class="flight-time">${itinerary.inbound.arrivalTime}</div><div class="flight-airport truncate">${itinerary.inbound.arrivalAirport}</div></div></div></div>
+                    <div class="grid grid-cols-[1fr_auto] gap-x-6">
+                        <div class="space-y-4">
+                            <div class="flight-leg">
+                                <div class="flex justify-between items-center mb-3"><div class="flex items-center text-sm font-semibold text-gray-800"><i class="fas fa-plane-departure mr-2 text-marine"></i><span>${outboundDate} · Outbound</span></div></div>
+                                <div class="flex items-center justify-between">
+                                    <div class="text-left w-2/5"><div class="flight-time">${itinerary.outbound.departureTime}</div><div class="flight-airport truncate">${itinerary.outbound.departureAirport}</div></div>
+                                    <div class="flight-path-container">
+                                        <div class="flight-path-line"></div>
+                                            <i class="fas fa-plane-departure flight-path-icon" style="padding-bottom:12px;"></i>
+                                                <div class="text-center absolute w-full top-full text-xs text-gray-500 mt-1">${itinerary.outbound.duration}h · ${outStopText}</div>
+                                        </div>
+                                    <div class="text-right w-2/5"><div class="flight-time">${itinerary.outbound.arrivalTime}</div><div class="flight-airport">${itinerary.outbound.arrivalAirport}</div></div>
+                                </div>
                             </div>
-                            <div class="text-center flex-col items-center justify-center space-y-2 border-l border-gray-200 pl-6 w-[150px] hidden md:flex"><div class="airline-logo h-12 w-24"><img src="${itinerary.outbound.logoUrl}" alt="${itinerary.outbound.airlineName} Logo"></div><div class="text-2xl font-bold text-marine">£${itinerary.price.toLocaleString()}</div><div class="text-xs text-gray-500 mb-2">per person</div><button class="btn-primary mt-2 text-sm px-4 py-2" style="width: auto; border-radius: 8px;" onclick="destinologyApp.selectFlight(${itinerary.id})">Flights + Hotel</button></div>
-                        </div>`;
+                            <div class="border-t border-dashed"></div>
+                            <div class="flight-leg pt-4">
+                                <div class="flex items-center text-sm font-semibold text-gray-800 mb-3"><i class="fas fa-plane-arrival mr-2 text-marine"></i><span>${inboundDate} · Inbound</span></div>
+                                <div class="flex items-center justify-between">
+                                    <div class="text-left w-2/5"><div class="flight-time">${itinerary.inbound.departureTime}</div><div class="flight-airport">${itinerary.inbound.departureAirport}</div></div>
+                                    <div class="flight-path-container">
+                                        <div class="flight-path-line"></div>
+                                            <i class="fas fa-plane-arrival flight-path-icon inbound-icon" style="padding-bottom:12px;"></i>
+                                                <div class="text-center absolute w-full top-full text-xs text-gray-500 mt-1">${itinerary.inbound.duration}h · ${inStopText}</div>
+                                        </div>
+                                    <div class="text-right w-2/5"><div class="flight-time">${itinerary.inbound.arrivalTime}</div><div class="flight-airport truncate">${itinerary.inbound.arrivalAirport}</div></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center flex-col items-center justify-center space-y-2 border-l border-gray-200 pl-6 w-[150px] hidden md:flex">
+                            <div class="airline-logo h-12 w-24"><img src="${itinerary.outbound.logoUrl}" alt="${itinerary.outbound.airlineName} Logo"></div>
+                            <div class="text-2xl font-bold text-marine">£${itinerary.price.toLocaleString()}</div>
+                            <div class="text-xs text-gray-500 mb-2">per person</div>
+                            <button class="btn-primary mt-2 text-sm px-4 py-2" style="width: auto; border-radius: 8px;" onclick="destinologyApp.selectFlight(${itinerary.id})">Flights + Hotel</button>
+                        </div>
+                    </div>`;
                     container.appendChild(flightCard);
                 });
                 this.renderPagination();
@@ -3234,11 +3278,11 @@
                 const pagination = document.createElement('div');
                 pagination.className = 'pagination';
                 pagination.innerHTML = `
-                    <button class="pagination-btn"><i class="fas fa-chevron-left"></i></button>
-                    <button class="pagination-btn active">1</button><button class="pagination-btn">2</button><button class="pagination-btn">3</button><button class="pagination-btn">4</button>
-                    <span class="flex items-center justify-center h-10 w-10 text-gray-500">...</span>
-                    <button class="pagination-btn">27</button>
-                    <button class="pagination-btn"><i class="fas fa-chevron-right"></i></button>`;
+                        <button class="pagination-btn"><i class="fas fa-chevron-left"></i></button>
+                        <button class="pagination-btn active">1</button><button class="pagination-btn">2</button><button class="pagination-btn">3</button><button class="pagination-btn">4</button>
+                        <span class="flex items-center justify-center h-10 w-10 text-gray-500">...</span>
+                        <button class="pagination-btn">27</button>
+                        <button class="pagination-btn"><i class="fas fa-chevron-right"></i></button>`;
                 container.appendChild(pagination);
             }
 
@@ -3267,9 +3311,28 @@
             }
 
             updateMainOffer(itinerary) {
+                // Update Logos
                 document.getElementById('outboundLogo').innerHTML = `<img src="${itinerary.outbound.logoUrl}" alt="${itinerary.outbound.airlineName} Logo">`;
                 document.getElementById('returnLogo').innerHTML = `<img src="${itinerary.inbound.logoUrl}" alt="${itinerary.inbound.airlineName} Logo">`;
+
+                // Update Price
                 this.updatePriceDisplay(itinerary.price);
+
+                // Update Outbound Flight Details
+                document.getElementById('offerOutboundDepTime').textContent = itinerary.outbound.departureTime;
+                document.getElementById('offerOutboundDepAirport').textContent = itinerary.outbound.departureAirport;
+                document.getElementById('offerOutboundArrTime').textContent = itinerary.outbound.arrivalTime;
+                document.getElementById('offerOutboundArrAirport').textContent = itinerary.outbound.arrivalAirport;
+                const outStopText = itinerary.outbound.stops === 0 ? 'Direct' : `${itinerary.outbound.stops} stop`;
+                document.getElementById('offerOutboundDuration').textContent = `${itinerary.outbound.duration}h • ${outStopText}`;
+
+                // Update Inbound Flight Details
+                document.getElementById('offerInboundDepTime').textContent = itinerary.inbound.departureTime;
+                document.getElementById('offerInboundDepAirport').textContent = itinerary.inbound.departureAirport;
+                document.getElementById('offerInboundArrTime').textContent = itinerary.inbound.arrivalTime;
+                document.getElementById('offerInboundArrAirport').textContent = itinerary.inbound.arrivalAirport;
+                const inStopText = itinerary.inbound.stops === 0 ? 'Direct' : `${itinerary.inbound.stops} stop`;
+                document.getElementById('offerInboundDuration').textContent = `${itinerary.inbound.duration}h • ${inStopText}`;
             }
 
             showFlightSelected(itinerary) {
@@ -3310,4 +3373,4 @@
     </script>
 </body>
 
-</html>
+</html> 
