@@ -1840,10 +1840,11 @@
                         </div>
                         <span class="text-small text-gray-600 ml-3 body-font">Total Price</span>
                     </div>
+                
                     <div class="cheapest-badge">
-                        <span>Cheapest</span>
-                    </div>
-                </div>
+                        <span style="font-size: 15px;">💎</span>
+                        <span>= &nbsp;Cheapest</span>
+                    </div>          </div>
             </div>
 
             <!-- Right Column: Flight & Hotel Offer -->
@@ -2942,7 +2943,21 @@
             init() {
                 this.setupEventListeners();
                 this.renderAirlineFilter();
+
+                let cheapestDay = null;
+                let minPrice = Infinity;
+                for (const day in this.calendarData) {
+                    if (this.calendarData[day].available && this.calendarData[day].price < minPrice) {
+                        minPrice = this.calendarData[day].price;
+                        cheapestDay = parseInt(day);
+                    }
+                }
+                if (cheapestDay) {
+                    this.selectedDate = new Date(2025, 10, cheapestDay);
+                }
+
                 this.renderCalendar();
+                this.updateSelectedDateDisplay(); // Update display after setting the date
                 this.renderFlightResults();
                 this.updatePriceDisplay();
                 this.startAnimations();
@@ -2982,11 +2997,39 @@
             generateCalendarData() {
                 const data = {};
                 const basePrice = 1459;
+
+                // First pass: generate all data
                 for (let day = 1; day <= 30; day++) {
                     const variation = Math.floor(Math.random() * 600) - 300;
-                    data[day] = { price: basePrice + variation, available: Math.random() > 0.1, cheapest: day === 30 };
+                    data[day] = {
+                        price: basePrice + variation,
+                        available: Math.random() > 0.1,
+                        cheapest: false  // Initialize all as not cheapest
+                    };
                 }
+
+                // Second pass: find the cheapest available days
+                const availableDays = Object.keys(data).filter(day => data[day].available);
+                if (availableDays.length > 0) {
+                    // Find the minimum price among available days
+                    const minPrice = Math.min(...availableDays.map(day => data[day].price));
+
+                    // Mark all days with the minimum price as cheapest
+                    availableDays.forEach(day => {
+                        if (data[day].price === minPrice) {
+                            data[day].cheapest = true;
+                        }
+                    });
+                }
+
                 return data;
+            }
+
+            refreshCalendarData() {
+                // Regenerate the calendar data with new cheapest calculations
+                this.calendarData = this.generateCalendarData();
+                // Force a complete re-render of the calendar
+                this.renderCalendar();
             }
 
             renderCalendar() {
@@ -3010,7 +3053,7 @@
                     const isSelected = this.selectedDate && currentDate.toDateString() === this.selectedDate.toDateString();
 
                     if (!isCurrentMonth) dayElement.classList.add('outside-month');
-                    if (isSelected) dayElement.classList.add('selected');
+                    if (isSelected) dayElement.classList.add('selected'); // This line correctly applies the 'selected' class
 
                     if (isCurrentMonth && this.calendarData[dayNumber]) {
                         const dayData = this.calendarData[dayNumber];
@@ -3374,4 +3417,4 @@
     </script>
 </body>
 
-</html> 
+</html>
